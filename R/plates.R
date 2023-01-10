@@ -14,6 +14,7 @@
 #' show(well)
 #' Row(well)
 #'
+#' @rdname Well
 #' @import methods
 #' @aliases Well
 #' @export Well
@@ -32,6 +33,10 @@ Well <- function(well, plateFormat = "384") {
   w <- new("Well", well = well, plateFormat = plateFormat)
   if (validObject(w)) w
 }
+
+#' @rdname Well-class
+#' @param x a [`Well`] object
+#' @export
 
 setMethod("as.character", "Well", function(x) x@well)
 
@@ -65,9 +70,14 @@ setValidity("Well", function(object) {
 #' well <- Well(well = "A01", plateFormat = "384")
 #' Row(well)
 #'
+#' @rdname Well-class
 #' @export
 
 setGeneric("Row", function(object) standardGeneric("Row"))
+
+#' @rdname Well-class
+#' @export
+
 setMethod("Row", "Well", function(object)
   gsub("[[:digit:]]+", "", object@well))
 
@@ -104,9 +114,14 @@ validRow <- function(w) {
 #' well <- Well("A01")
 #' Column(well)
 #'
+#' @rdname Well-class
 #' @export
 
 setGeneric("Column", function(object) standardGeneric("Column"))
+
+#' @rdname Well-class
+#' @export
+#'
 setMethod("Column", "Well", function(object)
   gsub("[[:alpha:]]+", "", object@well))
 
@@ -147,6 +162,9 @@ validColumn <- function(w) {
 #' @export
 
 setGeneric("nextWell", function(well) standardGeneric("nextWell"))
+
+#' @rdname nextWell
+#' @export
 setMethod ("nextWell", "Well", function(well) {
   if (well@plateFormat == "undefined") stop("Can not use undefined format.")
   plateFormat <- as.numeric(well@plateFormat)
@@ -251,10 +269,12 @@ setGeneric("setWell", function(plate, well, what, volume)
   if (validObject(plate)) plate
 }
 
+#' @rdname setWell
 #' @export
 
 setMethod( "setWell", c("Plate", "Well", "character", "numeric"), .setWell)
 
+#' @rdname setWell
 #' @export
 
 setMethod( "setWell", c("Plate", "Well", "character", "logical")
@@ -293,6 +313,9 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 
 setGeneric("sourceReagent", function(plate, well) standardGeneric("sourceReagent"))
 
+#' @rdname sourceReagent
+#' @export
+
 setMethod("sourceReagent", c("Plate", "Well"), function(plate, well) {
   wellName <- well@well
   plateTable <- DataFrame(plate)
@@ -305,6 +328,9 @@ setMethod("sourceReagent", c("Plate", "Well"), function(plate, well) {
         , ". This should not happen in source plates")
   colnames(plateRow)[index]
 })
+
+#' @rdname sourceReagent
+#' @export
 
 setMethod("sourceReagent", c("Plate", "missing"), function(plate, well) {
   colnames(plate@plate)[-1]
@@ -340,6 +366,9 @@ setMethod("sourceReagent", c("Plate", "missing"), function(plate, well) {
 
 setGeneric("plateWellVolume", function(plate, well, what) standardGeneric("plateWellVolume"))
 
+#' @rdname plateWellVolume
+#' @export
+
 setMethod("plateWellVolume", c("Plate", "Well", "missing"), function(plate, well, what) {
   wellName   <- well@well
   plateTable <- DataFrame(plate)
@@ -347,6 +376,9 @@ setMethod("plateWellVolume", c("Plate", "Well", "missing"), function(plate, well
   plateRow   <- plateTable[wellName,]
   sum(unlist(plateRow), na.rm = TRUE)
 })
+
+#' @rdname plateWellVolume
+#' @export
 
 setMethod("plateWellVolume", c("Plate", "Well", "character"), function(plate, well, what) {
   wellName   <- well@well
@@ -387,6 +419,9 @@ setMethod("plateWellVolume", c("Plate", "Well", "character"), function(plate, we
 
 setGeneric("seekReagent", function(object, reagent, start) standardGeneric("seekReagent"))
 
+#' @rdname seekReagent
+#' @export
+
 setMethod ("seekReagent", c("Plate", "character", "Well"), function(object, reagent, start) {
   plateTable <- DataFrame(object)
   # Truncate the table to the start position
@@ -397,6 +432,9 @@ setMethod ("seekReagent", c("Plate", "character", "Well"), function(object, reag
   if (is.na(well)) return(NA)
   Well(well, plateFormat = metadata(object)$type)
 })
+
+#' @rdname seekReagent
+#' @export
 
 setMethod ("seekReagent", c("Plate", "character", "missing"), function(object, reagent, start) {
   seekReagent(object, reagent, Well(well="A01", plateFormat = "undefined"))

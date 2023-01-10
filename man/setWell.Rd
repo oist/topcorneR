@@ -2,21 +2,27 @@
 % Please edit documentation in R/plates.R
 \name{setWell}
 \alias{setWell}
+\alias{setWell,Plate,Well,character,numeric-method}
+\alias{setWell,Plate,Well,character,logical-method}
 \title{Set the contents of a well}
 \usage{
 setWell(plate, well, what, volume)
+
+\S4method{setWell}{Plate,Well,character,numeric}(plate, well, what, volume)
+
+\S4method{setWell}{Plate,Well,character,logical}(plate, well, what, volume)
 }
 \arguments{
-\item{plate}{A [`Plate`] object.}
+\item{plate}{A \code{\link{Plate}} object.}
 
-\item{well}{A [`Well`] object.}
+\item{well}{A \code{\link{Well}} object.}
 
 \item{what}{A reagent name (character value).}
 
 \item{volume}{A volume in nanoliters (numeric value).}
 }
 \value{
-Returns a [`Plate`] object.
+Returns a \code{\link{Plate}} object.
 }
 \description{
 Set the contents of a well

@@ -2,22 +2,28 @@
 % Please edit documentation in R/plates.R
 \name{seekReagent}
 \alias{seekReagent}
+\alias{seekReagent,Plate,character,Well-method}
+\alias{seekReagent,Plate,character,missing-method}
 \title{Find a well that can provide enough reagent}
 \usage{
 seekReagent(object, reagent, start)
+
+\S4method{seekReagent}{Plate,character,Well}(object, reagent, start)
+
+\S4method{seekReagent}{Plate,character,missing}(object, reagent, start)
 }
 \arguments{
-\item{object}{A [`Plate`] object.}
+\item{object}{A \code{\link{Plate}} object.}
 
 \item{reagent}{A reagent name.}
 
-\item{start}{A [`Well`] object (to avoid backtracking).}
+\item{start}{A \code{\link{Well}} object (to avoid backtracking).}
 }
 \value{
-a `Well` object.
+a \code{Well} object.
 }
 \description{
-Given a [`Plate`] object, check if the reagent is available, and
+Given a \code{\link{Plate}} object, check if the reagent is available, and
 if yes, in which well.
 }
 \examples{

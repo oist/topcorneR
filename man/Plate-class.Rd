@@ -12,7 +12,7 @@ Objects of this class represent a multiwell plate.
 \section{Slots}{
 
 \describe{
-\item{\code{type}}{A plate type such as `"384"`, `"96"`, etc.`}
+\item{\code{type}}{A plate type such as \code{"384"}, \code{"96"}, etc.`}
 
 \item{\code{deadVolume}}{The dead volume of wells in this plate.}
 

@@ -10,7 +10,7 @@ validRow(w)
 validColumn(w)
 }
 \arguments{
-\item{w}{A [`Well`].}
+\item{w}{A \code{\link{Well}}.}
 }
 \value{
 TRUE if valid, otherwise returns an error

@@ -2,15 +2,18 @@
 % Please edit documentation in R/plates.R
 \name{nextWell}
 \alias{nextWell}
+\alias{nextWell,Well-method}
 \title{Move to the next well}
 \usage{
 nextWell(well)
+
+\S4method{nextWell}{Well}(well)
 }
 \arguments{
-\item{well}{A [`Well`] object.}
+\item{well}{A \code{\link{Well}} object.}
 }
 \value{
-A [`Well`] object.
+A \code{\link{Well}} object.
 }
 \description{
 From left to right, and up to down, give the position of the next well.

@@ -2,14 +2,20 @@
 % Please edit documentation in R/plates.R
 \name{plateWellVolume}
 \alias{plateWellVolume}
+\alias{plateWellVolume,Plate,Well,missing-method}
+\alias{plateWellVolume,Plate,Well,character-method}
 \title{Get reagent volume}
 \usage{
 plateWellVolume(plate, well, what)
+
+\S4method{plateWellVolume}{Plate,Well,missing}(plate, well, what)
+
+\S4method{plateWellVolume}{Plate,Well,character}(plate, well, what)
 }
 \arguments{
-\item{plate}{A [`Plate`] object.}
+\item{plate}{A \code{\link{Plate}} object.}
 
-\item{well}{A [`Well`] object.}
+\item{well}{A \code{\link{Well}} object.}
 
 \item{what}{The name of a reagent.}
 }

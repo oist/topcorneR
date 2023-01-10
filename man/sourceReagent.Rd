@@ -2,14 +2,20 @@
 % Please edit documentation in R/plates.R
 \name{sourceReagent}
 \alias{sourceReagent}
+\alias{sourceReagent,Plate,Well-method}
+\alias{sourceReagent,Plate,missing-method}
 \title{Get reagent name}
 \usage{
 sourceReagent(plate, well)
+
+\S4method{sourceReagent}{Plate,Well}(plate, well)
+
+\S4method{sourceReagent}{Plate,missing}(plate, well)
 }
 \arguments{
-\item{plate}{A [`Plate`] object.}
+\item{plate}{A \code{\link{Plate}} object.}
 
-\item{well}{A [`Well`] object.}
+\item{well}{A \code{\link{Well}} object.}
 }
 \description{
 In a source plate, get the name of the reagent contained in a given well.
