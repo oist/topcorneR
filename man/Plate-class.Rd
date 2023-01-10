@@ -4,6 +4,7 @@
 \name{Plate-class}
 \alias{Plate-class}
 \alias{.Plate}
+\alias{Plate}
 \title{A multiwell plate}
 \description{
 Objects of this class represent a multiwell plate.
@@ -15,7 +16,7 @@ Objects of this class represent a multiwell plate.
 
 \item{\code{deadVolume}}{The dead volume of wells in this plate.}
 
-\item{\code{maxVolume}}{The maxiumum colume of wells in this plate.}
+\item{\code{maxVolume}}{The maximum volume of wells in this plate.}
 }}
 
 \examples{

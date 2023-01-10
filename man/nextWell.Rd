@@ -7,10 +7,10 @@
 nextWell(well)
 }
 \arguments{
-\item{well}{A \code{\link{Well}} object.}
+\item{well}{A [`Well`] object.}
 }
 \value{
-A \code{\link{Well}} object.
+A [`Well`] object.
 }
 \description{
 From left to right, and up to down, give the position of the next well.

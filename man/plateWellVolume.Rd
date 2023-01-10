@@ -7,27 +7,31 @@
 plateWellVolume(plate, well, what)
 }
 \arguments{
-\item{plate}{A \code{\link{Plate}} object.}
+\item{plate}{A [`Plate`] object.}
 
-\item{well}{A \code{\link{Well}} object.}
+\item{well}{A [`Well`] object.}
+
+\item{what}{The name of a reagent.}
 }
 \description{
 In a given plate, get the volume of the reagent contained in a given well.
 }
 \examples{
 
-destPlate <- Plate(plate = tibble::tibble(well = platetools::num_to_well(1:384, plate = "384")))
-destPlate \%<>\%
-  setWell(Well(well = "A01", plateFormat = "384"), "dNTP", 50) \%>\%
-  setWell(Well(well = "A02", plateFormat = "384"), "dNTP", 100) \%>\%
-  setWell(Well(well = "A01", plateFormat = "384"), "buffer", 50)
+destPlate <- Plate( type       = "384"
+                  , deadVolume = 10000
+                  , maxVolume  = 100000)
+destPlate <- destPlate |>
+  setWell(Well("A01"), "dNTP",   50) |>
+  setWell(Well("A02"), "dNTP",  100) |>
+  setWell(Well("A01"), "buffer", 50)
 
-destPlate \%>\% plateWellVolume(Well(well = "A01"))
-destPlate \%>\% plateWellVolume(Well(well = "A01"), "dNTP")
-destPlate \%>\% plateWellVolume(Well(well = "A01"), "buffer")
+destPlate |> plateWellVolume(Well("A01"))
+destPlate |> plateWellVolume(Well("A01"), "dNTP")
+destPlate |> plateWellVolume(Well("A01"), "buffer")
 
-destPlate \%>\% plateWellVolume(Well(well = "A02"))
-destPlate \%>\% plateWellVolume(Well(well = "A02"), "dNTP")
-destPlate \%>\% plateWellVolume(Well(well = "A02"), "buffer")
+destPlate |> plateWellVolume(Well("A02"))
+destPlate |> plateWellVolume(Well("A02"), "dNTP")
+destPlate |> plateWellVolume(Well("A02"), "buffer")
 
 }

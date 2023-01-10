@@ -6,6 +6,9 @@
 \usage{
 Row(object)
 }
+\arguments{
+\item{object}{The [`Well`] object from which row coordinates are extracted.}
+}
 \value{
 A row name in character format.
 }

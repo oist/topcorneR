@@ -16,15 +16,19 @@ In a source plate, get the name of the reagent contained in a given well.
 }
 \examples{
 
-sourcePlate <- Plate(wells = DataFrame(well = platetools::num_to_well(1:384, plate = 384)))
-sourcePlate \%<>\%
-  setWell(Well(well = "A01", plateFormat = "384"), "dNTP", 100000) \%>\%
-  setWell(Well(well = "A02", plateFormat = "384"), "dNTP", 100000) \%>\%
-  setWell(Well(well = "A03", plateFormat = "384"), "buffer", 100000)
+sourcePlate <- Plate( type       = "384"
+                    , deadVolume = 10000
+                    , maxVolume  = 100000)
 
-sourcePlate \%>\% sourceReagent(Well(well = "A01"))
-sourcePlate \%>\% sourceReagent(Well(well = "A03"))
-sourcePlate \%>\% sourceReagent()
+sourcePlate <- sourcePlate |>
+  setWell(Well("A01"), "dNTP",   100000) |>
+  setWell(Well("A02"), "dNTP",   100000) |>
+  setWell(Well("A03"), "buffer", 100000)
+
+sourcePlate |> DataFrame() |> head()
+
+sourcePlate |> sourceReagent(Well("A01"))
+sourcePlate |> sourceReagent(Well("A03"))
 
 }
 \concept{Plate method}

@@ -3,6 +3,7 @@
 \docType{class}
 \name{Well-class}
 \alias{Well-class}
+\alias{Well}
 \title{Well coordinates}
 \description{
 Objects of this class represent a position in a microwell plate.  This class

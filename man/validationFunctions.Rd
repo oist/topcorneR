@@ -2,24 +2,23 @@
 % Please edit documentation in R/plates.R
 \name{validRow}
 \alias{validRow}
-\alias{Column}
+\alias{validColumn}
 \title{Tests the well's row name is valid}
 \usage{
 validRow(w)
 
-Column(object)
+validColumn(w)
+}
+\arguments{
+\item{w}{A [`Well`].}
 }
 \value{
 TRUE if valid, otherwise returns an error
 
-A column name in character format
+TRUE if valid, otherwise returns an error
 }
 \description{
-Given a well object, tells in which column the well is.
-}
-\examples{
-validRow(Well("A01", "96"))
-well <- Well("A01")
-Column(well)
+Tests the well's row name is valid
 
+Tests the well's column number is valid
 }

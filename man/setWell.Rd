@@ -24,7 +24,7 @@ Set the contents of a well
 \examples{
 example("Plate-class")
 sourcePlate <- plate
-A01 <- Well(well = "A01", plateFormat = "384")
+A01 <- Well("A01")
 sourcePlate <- setWell(sourcePlate, A01, "dNTP", 100000)
 sourcePlate <- setWell(sourcePlate, Well(well = "A02", plateFormat = "384"), "dNTP", 100000)
 sourcePlate <- setWell(sourcePlate, Well(well = "A03", plateFormat = "384"), "buffer", 100000)

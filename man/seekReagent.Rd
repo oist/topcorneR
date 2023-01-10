@@ -7,25 +7,28 @@
 seekReagent(object, reagent, start)
 }
 \arguments{
-\item{object}{A \code{\link{Plate}} object.}
+\item{object}{A [`Plate`] object.}
 
 \item{reagent}{A reagent name.}
 
-\item{start}{A \code{\link{Well}} object (to avoid backtracking).}
+\item{start}{A [`Well`] object (to avoid backtracking).}
 }
 \value{
-a \code{\link{Well}} object.
+a `Well` object.
 }
 \description{
-Given a \code{\link{Plate}} object, check if the reagent is available, and
+Given a [`Plate`] object, check if the reagent is available, and
 if yes, in which well.
 }
 \examples{
-sourcePlate <- Plate(plate = tibble::tibble(well = platetools::num_to_well(1:384, plate = "384")))
-sourcePlate \%<>\%
-  setWell(Well(well = "A01", plateFormat = "384"), "dNTP", 100000) \%>\%
-  setWell(Well(well = "A02", plateFormat = "384"), "dNTP", 100000) \%>\%
-  setWell(Well(well = "A03", plateFormat = "384"), "buffer", 100000)
+sourcePlate <- Plate( type       = "384"
+                    , deadVolume = 10000
+                    , maxVolume  = 100000)
+
+sourcePlate <- sourcePlate |>
+  setWell(Well("A01"), "dNTP",   100000) |>
+  setWell(Well("A02"), "dNTP",   100000) |>
+  setWell(Well("A03"), "buffer", 100000)
 
 seekReagent(sourcePlate, "buffer")
 

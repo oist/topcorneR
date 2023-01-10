@@ -20,21 +20,35 @@ knitr::opts_chunk$set(
 library(topcorneR)
 ```
 
+# Wells
+
 A `Well` represents the coordinates of a well in a plate of a given format
 (by default, 384).  Given these coordinates, the functions `Row()` and `Column()`
 extract the row and column coordinates as letters and numbers respectively.
 Note that plate formats names are characters, not numbers.
 
 ```{r wells}
-well <- Well(well = "C14", plateFormat = "384")
+well <- Well("C14")
 well |> Row()
 Column(well)
 ```
+
+Because the well coordinates come with a plate format, it is possible to
+determine where is the "next" well
 
 ```{r next_wells}
 nextWell(well)
 ```
 
+# Plates
+
+A plate object represents a physical mutliwell plate that may be filled with
+liquids.  In addition to its format, it has a _dead volume_ property that is
+used to calculate when it is not possible anymore to draw liquid from a well.
+
+```{r plates}
+
+```
 
 # For developers
 
