@@ -4,15 +4,51 @@
     <loc>oist.github.io/topcorneR/404.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/articles/PlateClasses.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/articles/index.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/authors.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/index.html</loc>
   </url>
   <url>
-    <loc>oist.github.io/topcorneR/reference/hello.html</loc>
+    <loc>oist.github.io/topcorneR/reference/Column.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/Plate-class.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/PlateTypeToWellNames.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/Row.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/Well-class.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/nextWell.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/plateWellVolume.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/seekReagent.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/setWell.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/sourceReagent.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/validationFunctions.html</loc>
   </url>
 </urlset>
