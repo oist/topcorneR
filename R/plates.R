@@ -70,6 +70,7 @@ setMethod("Row", "Well", function(object)
 #'
 #' @return TRUE if valid, otherwise returns an error
 #'
+#' @rdname validationFunctions
 #' @examples
 #' validRow(Well("A01", "96"))
 
@@ -93,6 +94,7 @@ validRow <- function(w) {
 #' @return
 #' A column name in character format
 #'
+#' @rdname validationFunctions
 #' @examples
 #' well <- Well("A01")
 #' Column(well)
