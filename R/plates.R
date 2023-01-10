@@ -14,6 +14,7 @@
 #' show(well)
 #' Row(well)
 #'
+#' @import methods
 #' @export Well
 #' @exportClass Well
 
