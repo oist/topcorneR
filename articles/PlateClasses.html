@@ -98,14 +98,14 @@
 </h2>
 <p>A <code>Well</code> represents the coordinates of a well in a plate
 of a given format (by default, 384). Given these coordinates, the
-functions <code><a href="../reference/Row.html">Row()</a></code> and <code><a href="../reference/Column.html">Column()</a></code> extract the row
+functions <code><a href="../reference/Well-class.html">Row()</a></code> and <code><a href="../reference/Well-class.html">Column()</a></code> extract the row
 and column coordinates as letters and numbers respectively. Note that
 plate formats names are characters, not numbers.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">well</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Well-class.html">Well</a></span><span class="op">(</span><span class="st">"C14"</span><span class="op">)</span></span>
-<span><span class="va">well</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/Row.html">Row</a></span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">well</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"C14"</span><span class="op">)</span></span>
+<span><span class="va">well</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/Well-class.html">Row</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "C"</span></span>
-<span><span class="fu"><a href="../reference/Column.html">Column</a></span><span class="op">(</span><span class="va">well</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/Well-class.html">Column</a></span><span class="op">(</span><span class="va">well</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "14"</span></span></code></pre></div>
 <p>Because the well coordinates come with a plate format, it is possible
 to determine where is the “next” well</p>

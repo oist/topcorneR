@@ -48,17 +48,23 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">setWell</span><span class="op">(</span><span class="va">plate</span>, <span class="va">well</span>, <span class="va">what</span>, <span class="va">volume</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">setWell</span><span class="op">(</span><span class="va">plate</span>, <span class="va">well</span>, <span class="va">what</span>, <span class="va">volume</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for Plate,Well,character,numeric</span></span>
+<span><span class="fu">setWell</span><span class="op">(</span><span class="va">plate</span>, <span class="va">well</span>, <span class="va">what</span>, <span class="va">volume</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for Plate,Well,character,logical</span></span>
+<span><span class="fu">setWell</span><span class="op">(</span><span class="va">plate</span>, <span class="va">well</span>, <span class="va">what</span>, <span class="va">volume</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>plate</dt>
-<dd><p>A [`Plate`] object.</p></dd>
+<dd><p>A <code><a href="Plate-class.html">Plate</a></code> object.</p></dd>
 
 
 <dt>well</dt>
-<dd><p>A [`Well`] object.</p></dd>
+<dd><p>A <code><a href="Well.html">Well</a></code> object.</p></dd>
 
 
 <dt>what</dt>
@@ -73,7 +79,7 @@
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a [`Plate`] object.</p>
+<p>Returns a <code><a href="Plate-class.html">Plate</a></code> object.</p>
     </div>
 
     <div class="section level2">
@@ -87,10 +93,10 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> Plt-cl&gt; plate</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A Plate with data about 384 wells (dead volume: 10000; max volume: 1e+05).</span>
 <span class="r-in"><span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="va">plate</span></span></span>
-<span class="r-in"><span><span class="va">A01</span> <span class="op">&lt;-</span> <span class="fu"><a href="Well-class.html">Well</a></span><span class="op">(</span><span class="st">"A01"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">A01</span> <span class="op">&lt;-</span> <span class="fu"><a href="Well.html">Well</a></span><span class="op">(</span><span class="st">"A01"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="fu">setWell</span><span class="op">(</span><span class="va">sourcePlate</span>, <span class="va">A01</span>, <span class="st">"dNTP"</span>, <span class="fl">100000</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="fu">setWell</span><span class="op">(</span><span class="va">sourcePlate</span>, <span class="fu"><a href="Well-class.html">Well</a></span><span class="op">(</span>well <span class="op">=</span> <span class="st">"A02"</span>, plateFormat <span class="op">=</span> <span class="st">"384"</span><span class="op">)</span>, <span class="st">"dNTP"</span>, <span class="fl">100000</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="fu">setWell</span><span class="op">(</span><span class="va">sourcePlate</span>, <span class="fu"><a href="Well-class.html">Well</a></span><span class="op">(</span>well <span class="op">=</span> <span class="st">"A03"</span>, plateFormat <span class="op">=</span> <span class="st">"384"</span><span class="op">)</span>, <span class="st">"buffer"</span>, <span class="fl">100000</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="fu">setWell</span><span class="op">(</span><span class="va">sourcePlate</span>, <span class="fu"><a href="Well.html">Well</a></span><span class="op">(</span>well <span class="op">=</span> <span class="st">"A02"</span>, plateFormat <span class="op">=</span> <span class="st">"384"</span><span class="op">)</span>, <span class="st">"dNTP"</span>, <span class="fl">100000</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="fu">setWell</span><span class="op">(</span><span class="va">sourcePlate</span>, <span class="fu"><a href="Well.html">Well</a></span><span class="op">(</span>well <span class="op">=</span> <span class="st">"A03"</span>, plateFormat <span class="op">=</span> <span class="st">"384"</span><span class="op">)</span>, <span class="st">"buffer"</span>, <span class="fl">100000</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">DataFrame</span><span class="op">(</span><span class="va">sourcePlate</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 384 rows and 2 columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>          dNTP    buffer</span>
