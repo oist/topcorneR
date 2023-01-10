@@ -1,0 +1,44 @@
+---
+title: "S4 classes for representing plates"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{S4 classes for representing plates}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(topcorneR)
+```
+
+A `Well` represents the coordinates of a well in a plate of a given format
+(by default, 384).  Given these coordinates, the functions `Row()` and `Column()`
+extract the row and column coordinates as letters and numbers respectively.
+Note that plate formats names are characters, not numbers.
+
+```{r wells}
+well <- Well(well = "C14", plateFormat = "384")
+well |> Row()
+Column(well)
+```
+
+```{r next_wells}
+nextWell(well)
+```
+
+
+# For developers
+
+## Conventions
+
+ - Class names start with capital letters.
+ - Constructor functions have the same name as the class.
