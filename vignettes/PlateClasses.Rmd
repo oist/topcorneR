@@ -44,10 +44,15 @@ nextWell(well)
 
 A plate object represents a physical mutliwell plate that may be filled with
 liquids.  In addition to its format, it has a _dead volume_ property that is
-used to calculate when it is not possible anymore to draw liquid from a well.
+used to calculate when it is not possible anymore to draw liquid from a well,
+and a _maximal volume_ property that is used to to calculate when it is not
+possible anymore to add liquid to a well.  These properties can be left
+unspecified when the plate representation is for theoretical purposes only.  All
+volumes are expressed in nanoliters.
 
 ```{r plates}
-
+Plate("96", deadVolume = 1e4, maxVolume = 1e5)
+Plate("384")
 ```
 
 # For developers

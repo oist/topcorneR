@@ -234,11 +234,13 @@ Plate <- function(type, deadVolume = NULL, maxVolume = NULL) {
 #' @rdname Plate-class
 #' @export
 
-setMethod("as.character", "Plate", function(x)
+setMethod("as.character", "Plate", function(x) {
+  deadVolume <- ifelse(is.null(metadata(x)$deadVolume), "unspecified", metadata(x)$deadVolume)
+  maxVolume  <- ifelse(is.null(metadata(x)$maxVolume),  "unspecified", metadata(x)$maxVolume)
   paste0( "A Plate with data about ", nrow(x), " wells "
-          , "(dead volume: ", metadata(x)$deadVolume
-          , "; max volume: ", metadata(x)$maxVolume, ").")
-)
+          , "(dead volume: ", deadVolume
+          , "; max volume: ", maxVolume, ").")
+})
 
 #' @rdname Plate-class
 #' @export
