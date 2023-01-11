@@ -19,10 +19,16 @@
     <loc>oist.github.io/topcorneR/index.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/reference/Echo-class.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/reference/Plate-class.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/PlateTypeToWellNames.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/Transducer.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/Well-class.html</loc>
@@ -31,10 +37,28 @@
     <loc>oist.github.io/topcorneR/reference/Well.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/reference/changeWell.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/exampleEcho.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/examplePlate.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/exampleTransducer.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/reference/index.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/reference/moveTransducer.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/reference/nextWell.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/planTransfers.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/plateWellVolume.html</loc>
@@ -46,7 +70,13 @@
     <loc>oist.github.io/topcorneR/reference/setWell.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/reference/showLogs.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/reference/sourceReagent.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/transfer.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/validationFunctions.html</loc>

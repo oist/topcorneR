@@ -33,7 +33,13 @@ if yes, in which well."><!-- mathjax --><script src="https://cdnjs.cloudflare.co
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/oist/topcorneR/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -41,7 +47,7 @@ if yes, in which well."><!-- mathjax --><script src="https://cdnjs.cloudflare.co
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Find a well that can provide enough reagent</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/oist/topcorneR/blob/HEAD/R/plates.R" class="external-link"><code>R/plates.R</code></a>, <a href="https://github.com/oist/topcorneR/blob/HEAD/R/echo.R" class="external-link"><code>R/echo.R</code></a></small>
       <div class="d-none name"><code>seekReagent.Rd</code></div>
     </div>
 
@@ -58,6 +64,12 @@ if yes, in which well.</p>
 <span><span class="fu">seekReagent</span><span class="op">(</span><span class="va">object</span>, <span class="va">reagent</span>, <span class="va">start</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for Plate,character,missing</span></span>
+<span><span class="fu">seekReagent</span><span class="op">(</span><span class="va">object</span>, <span class="va">reagent</span>, <span class="va">start</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for Echo,character,Well</span></span>
+<span><span class="fu">seekReagent</span><span class="op">(</span><span class="va">object</span>, <span class="va">reagent</span>, <span class="va">start</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for Echo,character,missing</span></span>
 <span><span class="fu">seekReagent</span><span class="op">(</span><span class="va">object</span>, <span class="va">reagent</span>, <span class="va">start</span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -81,6 +93,16 @@ if yes, in which well.</p>
 
 <p>a <code>Well</code> object.</p>
     </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p>Other Plate functions: 
+<code><a href="PlateTypeToWellNames.html">PlateTypeToWellNames</a>()</code>,
+<code><a href="Well-class.html">as.character,Well-method</a></code>,
+<code><a href="nextWell.html">nextWell</a>()</code>,
+<code><a href="plateWellVolume.html">plateWellVolume</a>()</code>,
+<code><a href="setWell.html">setWell</a>()</code>,
+<code><a href="sourceReagent.html">sourceReagent</a>()</code></p></div>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
@@ -103,7 +125,7 @@ if yes, in which well.</p>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by The package maintainer.</p>
+  <p></p><p>Developed by Charles Plessy.</p>
 </div>
 
 <div class="pkgdown-footer-right">

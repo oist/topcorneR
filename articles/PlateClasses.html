@@ -50,7 +50,14 @@
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/oist/topcorneR/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -65,35 +72,14 @@
       <img src="" class="logo" alt=""><h1>S4 classes for representing plates</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/oist/topcorneR/blob/HEAD/vignettes/PlateClasses.Rmd" class="external-link"><code>vignettes/PlateClasses.Rmd</code></a></small>
       <div class="d-none name"><code>PlateClasses.Rmd</code></div>
     </div>
 
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">topcorneR</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required package: S4Vectors</span></span>
-<span><span class="co">#&gt; Loading required package: stats4</span></span>
-<span><span class="co">#&gt; Loading required package: BiocGenerics</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'BiocGenerics'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     IQR, mad, sd, var, xtabs</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     anyDuplicated, append, as.data.frame, basename, cbind, colnames,</span></span>
-<span><span class="co">#&gt;     dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,</span></span>
-<span><span class="co">#&gt;     grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,</span></span>
-<span><span class="co">#&gt;     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,</span></span>
-<span><span class="co">#&gt;     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,</span></span>
-<span><span class="co">#&gt;     union, unique, unsplit, which.max, which.min</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Attaching package: 'S4Vectors'</span></span>
-<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;     expand.grid, I, unname</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://oist.github.io/topcorneR">topcorneR</a></span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="wells">Wells<a class="anchor" aria-label="anchor" href="#wells"></a>
 </h2>
@@ -107,12 +93,14 @@ plate formats names are characters, not numbers.</p>
 <span><span class="va">well</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/Well-class.html">Row</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "C"</span></span>
 <span><span class="fu"><a href="../reference/Well-class.html">Column</a></span><span class="op">(</span><span class="va">well</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "14"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "14"</span></span>
+<span><span class="fu"><a href="../reference/Well-class.html">Column</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"C04"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "04"</span></span></code></pre></div>
 <p>Because the well coordinates come with a plate format, it is possible
-to determine where is the “next” well</p>
+to determine where is the “next” well.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/nextWell.html">nextWell</a></span><span class="op">(</span><span class="va">well</span><span class="op">)</span></span>
-<span><span class="co">#&gt; C15 (384-well format)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/nextWell.html">nextWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A24"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; B01 (384-well format)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="plates">Plates<a class="anchor" aria-label="anchor" href="#plates"></a>
@@ -126,10 +114,75 @@ add liquid to a well. These properties can be left unspecified when the
 plate representation is for theoretical purposes only. All volumes are
 expressed in nanoliters.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/Plate-class.html">Plate</a></span><span class="op">(</span><span class="st">"96"</span>, deadVolume <span class="op">=</span> <span class="fl">1e4</span>, maxVolume <span class="op">=</span> <span class="fl">1e5</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">plate</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Plate-class.html">Plate</a></span><span class="op">(</span><span class="st">"96"</span>, deadVolume <span class="op">=</span> <span class="fl">1e4</span>, maxVolume <span class="op">=</span> <span class="fl">1e5</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; A Plate with data about 96 wells (dead volume: 10000; max volume: 1e+05).</span></span>
 <span><span class="fu"><a href="../reference/Plate-class.html">Plate</a></span><span class="op">(</span><span class="st">"384"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; A Plate with data about 384 wells (dead volume: unspecified; max volume: unspecified).</span></span></code></pre></div>
+<p>The function <code>PlateTypeToWellNames</code> enumerates the names
+of the wells of a plate.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/PlateTypeToWellNames.html">PlateTypeToWellNames</a></span><span class="op">(</span><span class="st">"96"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">13</span><span class="op">)</span></span>
+<span><span class="co">#&gt;  [1] "A01" "A02" "A03" "A04" "A05" "A06" "A07" "A08" "A09" "A10" "A11" "A12"</span></span>
+<span><span class="co">#&gt; [13] "B01"</span></span></code></pre></div>
+<p>A filter function, <code>setWell</code>, is provided to add contents
+to a plate.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plate</span> <span class="op">&lt;-</span> <span class="va">plate</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/setWell.html">setWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A01"</span><span class="op">)</span>, <span class="st">"dNTP"</span>, <span class="fl">1e5</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/setWell.html">setWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A02"</span><span class="op">)</span>, <span class="st">"DMSO"</span>, <span class="fl">1e5</span><span class="op">)</span></span></code></pre></div>
+<p>The contents of a plate can be extracted by converting <em>Plate</em>
+objects to their base class, <em>DataFrame</em>.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plate</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html" class="external-link">DataFrame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; DataFrame with 6 rows and 2 columns</span></span>
+<span><span class="co">#&gt;          dNTP      DMSO</span></span>
+<span><span class="co">#&gt;     &lt;numeric&gt; &lt;numeric&gt;</span></span>
+<span><span class="co">#&gt; A01     1e+05        NA</span></span>
+<span><span class="co">#&gt; A02        NA     1e+05</span></span>
+<span><span class="co">#&gt; A03        NA        NA</span></span>
+<span><span class="co">#&gt; A04        NA        NA</span></span>
+<span><span class="co">#&gt; A05        NA        NA</span></span>
+<span><span class="co">#&gt; A06        NA        NA</span></span></code></pre></div>
+<p>Note that setting again the same reagent overrides the volume, and
+that setting another reagent does not reset the previous one.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plate</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/setWell.html">setWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A01"</span><span class="op">)</span>, <span class="st">"dNTP"</span>, <span class="fl">1e4</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html" class="external-link">DataFrame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; DataFrame with 3 rows and 2 columns</span></span>
+<span><span class="co">#&gt;          dNTP      DMSO</span></span>
+<span><span class="co">#&gt;     &lt;numeric&gt; &lt;numeric&gt;</span></span>
+<span><span class="co">#&gt; A01     10000        NA</span></span>
+<span><span class="co">#&gt; A02        NA     1e+05</span></span>
+<span><span class="co">#&gt; A03        NA        NA</span></span>
+<span><span class="va">plate</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/setWell.html">setWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A01"</span><span class="op">)</span>, <span class="st">"DMSO"</span>, <span class="fl">1e4</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/pkg/S4Vectors/man/DataFrame-class.html" class="external-link">DataFrame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; DataFrame with 3 rows and 2 columns</span></span>
+<span><span class="co">#&gt;          dNTP      DMSO</span></span>
+<span><span class="co">#&gt;     &lt;numeric&gt; &lt;numeric&gt;</span></span>
+<span><span class="co">#&gt; A01     1e+05     1e+04</span></span>
+<span><span class="co">#&gt; A02        NA     1e+05</span></span>
+<span><span class="co">#&gt; A03        NA        NA</span></span></code></pre></div>
+<p>The <code>sourceReagent</code> function reports what reagents are
+found in the whole plate or one of its wells.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/sourceReagent.html">sourceReagent</a></span><span class="op">(</span><span class="va">plate</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "dNTP" "DMSO"</span></span>
+<span><span class="fu"><a href="../reference/sourceReagent.html">sourceReagent</a></span><span class="op">(</span><span class="va">plate</span>, <span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A02"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "DMSO"</span></span></code></pre></div>
+<p>Conversely, <code>plateWellVolume</code> reports the volume of a well
+or of one of its reagents.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">plate</span> <span class="op">&lt;-</span> <span class="va">plate</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/setWell.html">setWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A03"</span><span class="op">)</span>, <span class="st">"DMSO"</span>, <span class="fl">1e4</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/setWell.html">setWell</a></span><span class="op">(</span><span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A03"</span><span class="op">)</span>, <span class="st">"H2O"</span>, <span class="fl">1e4</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plateWellVolume.html">plateWellVolume</a></span><span class="op">(</span><span class="va">plate</span>, <span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A03"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 20000</span></span>
+<span><span class="fu"><a href="../reference/plateWellVolume.html">plateWellVolume</a></span><span class="op">(</span><span class="va">plate</span>, <span class="fu"><a href="../reference/Well.html">Well</a></span><span class="op">(</span><span class="st">"A03"</span><span class="op">)</span>, <span class="st">"DMSO"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 10000</span></span></code></pre></div>
+<p>Finally, starting from <code>A01</code> or an arbitrary location, it
+is possible to find where is the next well containing a given
+reagent.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/seekReagent.html">seekReagent</a></span><span class="op">(</span><span class="va">plate</span>, <span class="st">"H2O"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; A03 (96-well format)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="for-developers">For developers<a class="anchor" aria-label="anchor" href="#for-developers"></a>
@@ -151,7 +204,7 @@ expressed in nanoliters.</p>
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by The package maintainer.</p>
+<p>Developed by Charles Plessy.</p>
 </div>
 
 <div class="pkgdown-footer-right">

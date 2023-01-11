@@ -31,7 +31,13 @@
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/oist/topcorneR/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -54,6 +60,11 @@
 
       <dl><dt>
           
+          <code><a href="Echo-class.html">as.character(<i>&lt;Echo&gt;</i>)</a></code> <code><a href="Echo-class.html">show(<i>&lt;Echo&gt;</i>)</a></code> 
+        </dt>
+        <dd>Echo state</dd>
+      </dl><dl><dt>
+          
           <code><a href="Plate-class.html">as.character(<i>&lt;Plate&gt;</i>)</a></code> <code><a href="Plate-class.html">show(<i>&lt;Plate&gt;</i>)</a></code> 
         </dt>
         <dd>A multiwell plate</dd>
@@ -64,7 +75,12 @@
         <dd>Well names of plate type</dd>
       </dl><dl><dt>
           
-          <code><a href="Well-class.html">as.character(<i>&lt;Well&gt;</i>)</a></code> <code><a href="Well-class.html">Row()</a></code> <code><a href="Well-class.html">Column()</a></code> 
+          <code><a href="Transducer.html">as.character(<i>&lt;Transducer&gt;</i>)</a></code> <code><a href="Transducer.html">show(<i>&lt;Transducer&gt;</i>)</a></code> 
+        </dt>
+        <dd>Transducer state</dd>
+      </dl><dl><dt>
+          
+          <code><a href="Well-class.html">as.character(<i>&lt;Well&gt;</i>)</a></code> <code><a href="Well-class.html">show(<i>&lt;Well&gt;</i>)</a></code> <code><a href="Well-class.html">Row()</a></code> <code><a href="Well-class.html">Column()</a></code> 
         </dt>
         <dd>The row of a well</dd>
       </dl><dl><dt>
@@ -74,9 +90,39 @@
         <dd>Well coordinates</dd>
       </dl><dl><dt>
           
+          <code><a href="changeWell.html">changeWell()</a></code> 
+        </dt>
+        <dd>Change a well position</dd>
+      </dl><dl><dt>
+          
+          <code><a href="exampleEcho.html">exampleEcho</a></code> 
+        </dt>
+        <dd>Example <code>Echo</code> object</dd>
+      </dl><dl><dt>
+          
+          <code><a href="examplePlate.html">examplePlate</a></code> 
+        </dt>
+        <dd>Example <code>Plate</code> object</dd>
+      </dl><dl><dt>
+          
+          <code><a href="exampleTransducer.html">exampleTransducer</a></code> 
+        </dt>
+        <dd>Example <code>Transducer</code> object</dd>
+      </dl><dl><dt>
+          
+          <code><a href="moveTransducer.html">moveTransducer()</a></code> 
+        </dt>
+        <dd>Change the state of the transducer</dd>
+      </dl><dl><dt>
+          
           <code><a href="nextWell.html">nextWell()</a></code> 
         </dt>
         <dd>Move to the next well</dd>
+      </dl><dl><dt>
+          
+          <code><a href="planTransfers.html">planTransfers()</a></code> 
+        </dt>
+        <dd>Plan Echo transfers</dd>
       </dl><dl><dt>
           
           <code><a href="plateWellVolume.html">plateWellVolume()</a></code> 
@@ -94,9 +140,19 @@
         <dd>Set the contents of a well</dd>
       </dl><dl><dt>
           
+          <code><a href="showLogs.html">showLogs()</a></code> 
+        </dt>
+        <dd>Show transfer logs</dd>
+      </dl><dl><dt>
+          
           <code><a href="sourceReagent.html">sourceReagent()</a></code> 
         </dt>
         <dd>Get reagent name</dd>
+      </dl><dl><dt>
+          
+          <code><a href="transfer.html">transfer()</a></code> 
+        </dt>
+        <dd>Transfer volume from a source to a destination plate</dd>
       </dl><dl><dt>
           
           <code><a href="validationFunctions.html">validRow()</a></code> <code><a href="validationFunctions.html">validColumn()</a></code> 
@@ -107,7 +163,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by The package maintainer.</p>
+  <p></p><p>Developed by Charles Plessy.</p>
 </div>
 
 <div class="pkgdown-footer-right">
