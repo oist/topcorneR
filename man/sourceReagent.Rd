@@ -35,6 +35,7 @@ sourcePlate |> DataFrame() |> head()
 
 sourcePlate |> sourceReagent(Well("A01"))
 sourcePlate |> sourceReagent(Well("A03"))
+sourcePlate |> sourceReagent()
 
 }
 \concept{Plate method}

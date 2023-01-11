@@ -316,6 +316,7 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 #'
 #' sourcePlate |> sourceReagent(Well("A01"))
 #' sourcePlate |> sourceReagent(Well("A03"))
+#' sourcePlate |> sourceReagent()
 #'
 #' @family Plate method
 #'
@@ -343,7 +344,7 @@ setMethod("sourceReagent", c("Plate", "Well"), function(plate, well) {
 #' @export
 
 setMethod("sourceReagent", c("Plate", "missing"), function(plate, well) {
-  colnames(plate@plate)[-1]
+  colnames(DataFrame(plate))
 })
 
 #' Get reagent volume
