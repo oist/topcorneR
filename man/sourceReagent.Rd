@@ -38,4 +38,13 @@ sourcePlate |> sourceReagent(Well("A03"))
 sourcePlate |> sourceReagent()
 
 }
-\concept{Plate method}
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()}
+}
+\concept{Plate functions}

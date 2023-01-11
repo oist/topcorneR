@@ -19,10 +19,11 @@ exists so that the validity of the coordinates can be tested (for instance
 }}
 
 \examples{
-well <- Well(well = "A01", plateFormat = "384")
+well <- Well("A01", plateFormat = "384")
 well
 as.character(well)
 show(well)
 Row(well)
+Column(well)
 
 }

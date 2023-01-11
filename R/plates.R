@@ -8,11 +8,12 @@
 #' @slot plateFormat A plate format.
 #'
 #' @examples
-#' well <- Well(well = "A01", plateFormat = "384")
+#' well <- Well("A01", plateFormat = "384")
 #' well
 #' as.character(well)
 #' show(well)
 #' Row(well)
+#' Column(well)
 #'
 #' @rdname Well
 #' @import methods
@@ -74,6 +75,7 @@ setValidity("Well", function(object) {
 #' well <- Well(well = "A01", plateFormat = "384")
 #' Row(well)
 #'
+#' @family Plate functions
 #' @rdname Well-class
 #' @export
 
@@ -113,6 +115,8 @@ validRow <- function(w) {
 #'
 #' @return
 #' A column name in character format
+#'
+#' @family Plate functions
 #'
 #' @examples
 #' well <- Well("A01")
@@ -163,6 +167,8 @@ validColumn <- function(w) {
 #'
 #' @return A [`Well`] object.
 #'
+#' @family Plate functions
+#'
 #' @export
 
 setGeneric("nextWell", function(well) standardGeneric("nextWell"))
@@ -188,6 +194,8 @@ setMethod ("nextWell", "Well", function(well) {
 #'
 #' @return
 #' Returns a character vector of well names.
+#'
+#' @family Plate functions
 #'
 #' @examples
 #' PlateTypeToWellNames("96")
@@ -262,13 +270,14 @@ setMethod("show", "Plate", function(object) cat(as.character(object)))
 #'
 #' @return Returns a [`Plate`] object.
 #'
+#' @family Plate functions
+#'
 #' @examples
-#' example("Plate-class")
-#' sourcePlate <- plate
+#' sourcePlate <- Plate("384", deadVolume = 1e4, maxVolume = 1e5)
 #' A01 <- Well("A01")
 #' sourcePlate <- setWell(sourcePlate, A01, "dNTP", 100000)
-#' sourcePlate <- setWell(sourcePlate, Well(well = "A02", plateFormat = "384"), "dNTP", 100000)
-#' sourcePlate <- setWell(sourcePlate, Well(well = "A03", plateFormat = "384"), "buffer", 100000)
+#' sourcePlate <- setWell(sourcePlate, Well("A02"), "dNTP",   100000)
+#' sourcePlate <- setWell(sourcePlate, Well("A03"), "buffer", 100000)
 #' DataFrame(sourcePlate)
 #' @export
 
@@ -324,7 +333,7 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 #' sourcePlate |> sourceReagent(Well("A03"))
 #' sourcePlate |> sourceReagent()
 #'
-#' @family Plate method
+#' @family Plate functions
 #'
 #' @export
 
@@ -360,6 +369,8 @@ setMethod("sourceReagent", c("Plate", "missing"), function(plate, well) {
 #' @param plate A [`Plate`] object.
 #' @param well A [`Well`] object.
 #' @param what The name of a reagent.
+#'
+#' @family Plate functions
 #'
 #' @examples
 #'
@@ -423,6 +434,8 @@ setMethod("plateWellVolume", c("Plate", "Well", "character"), function(plate, we
 #' @param start A [`Well`] object (to avoid backtracking).
 #'
 #' @return a `Well` object.
+#'
+#' @family Plate functions
 #'
 #' @examples
 #' sourcePlate <- Plate( type       = "384"

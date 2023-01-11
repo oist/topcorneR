@@ -28,11 +28,20 @@ Returns a \code{\link{Plate}} object.
 Set the contents of a well
 }
 \examples{
-example("Plate-class")
-sourcePlate <- plate
+sourcePlate <- Plate("384", deadVolume = 1e4, maxVolume = 1e5)
 A01 <- Well("A01")
 sourcePlate <- setWell(sourcePlate, A01, "dNTP", 100000)
-sourcePlate <- setWell(sourcePlate, Well(well = "A02", plateFormat = "384"), "dNTP", 100000)
-sourcePlate <- setWell(sourcePlate, Well(well = "A03", plateFormat = "384"), "buffer", 100000)
+sourcePlate <- setWell(sourcePlate, Well("A02"), "dNTP",   100000)
+sourcePlate <- setWell(sourcePlate, Well("A03"), "buffer", 100000)
 DataFrame(sourcePlate)
 }
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{seekReagent}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}

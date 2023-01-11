@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(topcorneR)
+library(topcorneR) |> suppressPackageStartupMessages()
 ```
 
 # Wells
@@ -31,13 +31,14 @@ Note that plate formats names are characters, not numbers.
 well <- Well("C14")
 well |> Row()
 Column(well)
+Column(Well("C04"))
 ```
 
 Because the well coordinates come with a plate format, it is possible to
-determine where is the "next" well
+determine where is the "next" well.
 
 ```{r next_wells}
-nextWell(well)
+nextWell(Well("A24"))
 ```
 
 # Plates
@@ -51,8 +52,64 @@ unspecified when the plate representation is for theoretical purposes only.  All
 volumes are expressed in nanoliters.
 
 ```{r plates}
-Plate("96", deadVolume = 1e4, maxVolume = 1e5)
+(plate <- Plate("96", deadVolume = 1e4, maxVolume = 1e5))
 Plate("384")
+```
+
+The function `PlateTypeToWellNames` enumerates the names of the wells of a
+plate.
+
+```{r plate_functions}
+PlateTypeToWellNames("96") |> head(13)
+```
+
+A filter function, `setWell`, is provided to add contents to a plate.
+
+```{r set_well}
+plate <- plate |>
+  setWell(Well("A01"), "dNTP", 1e5) |>
+  setWell(Well("A02"), "DMSO", 1e5)
+```
+
+The contents of a plate can be extracted by converting _Plate_ objects to their
+base class, _DataFrame_.
+
+```{r plate_contents}
+plate |> DataFrame() |> head()
+```
+
+Note that setting again the same reagent overrides the volume, and that setting
+another reagent does not reset the previous one.
+
+```{r set_well2}
+plate |> setWell(Well("A01"), "dNTP", 1e4) |> DataFrame() |> head(3)
+plate |> setWell(Well("A01"), "DMSO", 1e4) |> DataFrame() |> head(3)
+```
+
+The `sourceReagent` function reports what reagents are found in the whole plate
+or one of its wells.
+
+```{r source_reagent}
+sourceReagent(plate)
+sourceReagent(plate, Well("A02"))
+```
+
+Conversely, `plateWellVolume` reports the volume of a well or of one of its
+reagents.
+
+```{r plate_well_volume}
+plate <- plate |>
+  setWell(Well("A03"), "DMSO", 1e4) |>
+  setWell(Well("A03"), "H2O", 1e4)
+plateWellVolume(plate, Well("A03"))
+plateWellVolume(plate, Well("A03"), "DMSO")
+```
+
+Finally, starting from `A01` or an arbitrary location, it is possible to find
+where is the next well containing a given reagent.
+
+```{r plate_seek_reagent}
+seekReagent(plate, "H2O")
 ```
 
 # For developers

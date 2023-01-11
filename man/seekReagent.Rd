@@ -45,3 +45,13 @@ sourcePlate <- sourcePlate |>
 seekReagent(sourcePlate, "buffer")
 
 }
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{setWell}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}

@@ -41,3 +41,13 @@ destPlate |> plateWellVolume(Well("A02"), "dNTP")
 destPlate |> plateWellVolume(Well("A02"), "buffer")
 
 }
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}

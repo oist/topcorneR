@@ -44,3 +44,21 @@ well <- Well("A01")
 Column(well)
 
 }
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{sourceReagent}()}
+
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}

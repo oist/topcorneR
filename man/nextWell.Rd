@@ -25,3 +25,13 @@ nextWell(Well("A12", plateFormat = "384"))
 nextWell(Well("A24", plateFormat = "384"))
 
 }
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{plateWellVolume}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}

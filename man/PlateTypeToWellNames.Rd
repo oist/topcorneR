@@ -21,3 +21,13 @@ PlateTypeToWellNames("96")
 PlateTypeToWellNames("384")
 
 }
+\seealso{
+Other Plate functions: 
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}
