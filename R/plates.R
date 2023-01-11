@@ -394,8 +394,12 @@ setMethod("plateWellVolume", c("Plate", "Well", "character"), function(plate, we
   wellName   <- well@well
   plateTable <- DataFrame(plate)
   if (ncol(plateTable) == 0) return(0)
-  plateRow   <- plateTable[wellName,]
-  vol <- plateRow[[what]]
+  if (ncol(plateTable) == 1) {
+    vol      <- plateTable[wellName,]
+  } else {
+    plateRow <- plateTable[wellName,]
+    vol <- plateRow[[what]]
+  }
   if(is.null(vol)) return(0)
   if(is.na(vol)) return(0)
   vol
