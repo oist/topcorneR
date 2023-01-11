@@ -22,5 +22,6 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Collate: 
+    'data.R'
     'plates.R'
     'echo.R'
