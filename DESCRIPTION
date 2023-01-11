@@ -12,6 +12,7 @@ LazyData: true
 RoxygenNote: 7.2.1
 Roxygen: list(markdown = TRUE)
 Depends:
+    R (>= 4.1),
     S4Vectors
 Imports: 
     methods,
@@ -20,3 +21,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Collate: 
+    'plates.R'
+    'echo.R'
