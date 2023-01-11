@@ -4,6 +4,8 @@ topcorneR
 The goal of topcorneR is to prepare liquid transfer sheets for instruments such
 as Echo (Labcyte, now Beckman) or I-DOT (CELLINK).
 
+![image](topcorneR.svg)
+
 Installation
 ------------
 
