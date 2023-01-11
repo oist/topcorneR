@@ -42,6 +42,7 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/PlateClasses.html">S4 classes for representing plates</a>
+    <a class="dropdown-item" href="../articles/transducer.html">Transducer simulator</a>
   </div>
 </li>
       </ul>
@@ -119,7 +120,16 @@ to determine where is the “next” well</p>
 <p>A plate object represents a physical mutliwell plate that may be
 filled with liquids. In addition to its format, it has a <em>dead
 volume</em> property that is used to calculate when it is not possible
-anymore to draw liquid from a well.</p>
+anymore to draw liquid from a well, and a <em>maximal volume</em>
+property that is used to to calculate when it is not possible anymore to
+add liquid to a well. These properties can be left unspecified when the
+plate representation is for theoretical purposes only. All volumes are
+expressed in nanoliters.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/Plate-class.html">Plate</a></span><span class="op">(</span><span class="st">"96"</span>, deadVolume <span class="op">=</span> <span class="fl">1e4</span>, maxVolume <span class="op">=</span> <span class="fl">1e5</span><span class="op">)</span></span>
+<span><span class="co">#&gt; A Plate with data about 96 wells (dead volume: 10000; max volume: 1e+05).</span></span>
+<span><span class="fu"><a href="../reference/Plate-class.html">Plate</a></span><span class="op">(</span><span class="st">"384"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; A Plate with data about 384 wells (dead volume: unspecified; max volume: unspecified).</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="for-developers">For developers<a class="anchor" aria-label="anchor" href="#for-developers"></a>
