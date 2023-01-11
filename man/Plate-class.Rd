@@ -13,6 +13,11 @@
 
 \S4method{show}{Plate}(object)
 }
+\arguments{
+\item{x}{A \code{\link{Plate}} object}
+
+\item{object}{A \code{\link{Plate}} object}
+}
 \description{
 Objects of this class represent a multiwell plate.
 }

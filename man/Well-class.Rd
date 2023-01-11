@@ -2,6 +2,7 @@
 % Please edit documentation in R/plates.R
 \name{as.character,Well-method}
 \alias{as.character,Well-method}
+\alias{show,Well-method}
 \alias{Row}
 \alias{Row,Well-method}
 \alias{Column}
@@ -9,6 +10,8 @@
 \title{The row of a well}
 \usage{
 \S4method{as.character}{Well}(x)
+
+\S4method{show}{Well}(object)
 
 Row(object)
 

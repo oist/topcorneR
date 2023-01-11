@@ -40,6 +40,10 @@ Well <- function(well, plateFormat = "384") {
 
 setMethod("as.character", "Well", function(x) x@well)
 
+#' @rdname Well-class
+#' @param object a [`Well`] object
+#' @export
+
 setMethod("show", "Well", function(object) cat(
   paste0(object@well, " (", object@plateFormat, "-well format)"))
 )
@@ -232,6 +236,7 @@ Plate <- function(type, deadVolume = NULL, maxVolume = NULL) {
 }
 
 #' @rdname Plate-class
+#' @param x A [`Plate`] object
 #' @export
 
 setMethod("as.character", "Plate", function(x) {
@@ -243,6 +248,7 @@ setMethod("as.character", "Plate", function(x) {
 })
 
 #' @rdname Plate-class
+#' @param object A [`Plate`] object
 #' @export
 
 setMethod("show", "Plate", function(object) cat(as.character(object)))
