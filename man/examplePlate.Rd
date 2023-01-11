@@ -11,8 +11,14 @@ An object of class \code{Plate} with 384 rows and 2 columns.
 examplePlate
 }
 \description{
-This object represents a 384-well plate with a dead volume of 10 microliters
-and a maximum volume of 100 microliters.  It is filled with reagents in its
-three first wells.
+This \code{\link{Plate}} represents a 384-well plate with a dead volume of
+10 microliters and a maximum volume of 100 microliters.  It is filled with
+reagents in its three first wells.
 }
+\seealso{
+Other example data: 
+\code{\link{exampleEcho}},
+\code{\link{exampleTransducer}}
+}
+\concept{example data}
 \keyword{datasets}

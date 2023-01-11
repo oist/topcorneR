@@ -11,7 +11,14 @@ An object of class \code{Transducer} of length 1.
 exampleTransducer
 }
 \description{
-This transducer is about to transfer from well \code{A01} of a source plate in
-384-well format to well \code{A01} of a destination plate in 96-well format.
+This \code{\link{Transducer}} object is about to transfer from well \code{A01} of a source
+plate in 384-well format to well \code{A01} of a destination plate in 96-well
+format.
 }
+\seealso{
+Other example data: 
+\code{\link{exampleEcho}},
+\code{\link{examplePlate}}
+}
+\concept{example data}
 \keyword{datasets}

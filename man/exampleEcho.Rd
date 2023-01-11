@@ -11,9 +11,15 @@ An object of class \code{Echo} of length 1.
 exampleEcho
 }
 \description{
-This object represents an Echo 525 machine loaded with a 384-well source
-plate from the \code{examplePlate} object and a 96-well destination plate, with
-its transducer ready to transfer between from source well \code{A01} to
-destination well \code{A01}.
+This \code{\link{Echo}} object represents an Echo 525 machine loaded with a 384-well
+source plate from the \code{\link{examplePlate}} object and a 96-well destination
+plate, with its transducer ready to transfer between from source well \code{A01}
+to destination well \code{A01}.
 }
+\seealso{
+Other example data: 
+\code{\link{examplePlate}},
+\code{\link{exampleTransducer}}
+}
+\concept{example data}
 \keyword{datasets}
