@@ -231,11 +231,19 @@ Plate <- function(type, deadVolume = NULL, maxVolume = NULL) {
   .Plate(DF)
 }
 
-setMethod("show", "Plate", function(object) cat(
-  paste0( "A Plate with data about ", nrow(object), " wells "
-          , "(dead volume: ", metadata(object)$deadVolume
-          , "; max volume: ", metadata(object)$maxVolume, ")."))
+#' @rdname Plate-class
+#' @export
+
+setMethod("as.character", "Plate", function(x)
+  paste0( "A Plate with data about ", nrow(x), " wells "
+          , "(dead volume: ", metadata(x)$deadVolume
+          , "; max volume: ", metadata(x)$maxVolume, ").")
 )
+
+#' @rdname Plate-class
+#' @export
+
+setMethod("show", "Plate", function(object) cat(as.character(object)))
 
 #' Set the contents of a well
 #'

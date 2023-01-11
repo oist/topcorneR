@@ -5,7 +5,14 @@
 \alias{Plate-class}
 \alias{.Plate}
 \alias{Plate}
+\alias{as.character,Plate-method}
+\alias{show,Plate-method}
 \title{A multiwell plate}
+\usage{
+\S4method{as.character}{Plate}(x)
+
+\S4method{show}{Plate}(object)
+}
 \description{
 Objects of this class represent a multiwell plate.
 }

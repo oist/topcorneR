@@ -1,0 +1,23 @@
+---
+title: "Transducer simulator"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Transducer simulator}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(topcorneR) |> suppressPackageStartupMessages()
+```
+
+_TopcorneR_ simulates the tranducer of a Labcyte (now Beckman) Echo machine and
+logs its activity to produce a table in comma-separated format that can be
+uploaded to the machine as a custom transfer file.
