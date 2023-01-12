@@ -30,13 +30,13 @@ transducer is moved to it.
 }
 \examples{
 sourcePlate <- examplePlate
-DataFrame(sourcePlate) |> head()
+head(sourcePlate)
 
 planPlate <- Plate("384") |>
   setWell(Well("A01"), "dNTP",   50) |>
   setWell(Well("A02"), "dNTP",  100) |>
   setWell(Well("A01"), "buffer", 50)
-DataFrame(planPlate) |> head()
+head(planPlate)
 
 destinationPlate <- Plate("384", deadVolume = 1e4, maxVolume = 1e5)
 

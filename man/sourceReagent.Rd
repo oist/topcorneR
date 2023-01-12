@@ -31,7 +31,7 @@ sourcePlate <- sourcePlate |>
   setWell(Well("A02"), "dNTP",   100000) |>
   setWell(Well("A03"), "buffer", 100000)
 
-sourcePlate |> DataFrame() |> head()
+head(sourcePlate)
 
 sourcePlate |> sourceReagent(Well("A01"))
 sourcePlate |> sourceReagent(Well("A03"))

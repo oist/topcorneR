@@ -29,7 +29,7 @@ and register the transfer in the log.
 \examples{
 
 sourcePlate <- examplePlate
-DataFrame(sourcePlate) |> head()
+head(sourcePlate)
 
 destinationPlate <- Plate("96", deadVolume = 1e4, maxVolume = 1e5)
 

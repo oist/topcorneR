@@ -5,16 +5,23 @@
 \alias{Plate-class}
 \alias{.Plate}
 \alias{Plate}
+\alias{head,Plate-method}
 \alias{as.character,Plate-method}
 \alias{show,Plate-method}
 \title{A multiwell plate}
 \usage{
+\S4method{head}{Plate}(x, n = 6L, ...)
+
 \S4method{as.character}{Plate}(x)
 
 \S4method{show}{Plate}(object)
 }
 \arguments{
-\item{x}{A \code{\link{Plate}} object}
+\item{x}{A \code{\link{Plate}} object.}
+
+\item{n}{The number of wells to be displayed.}
+
+\item{...}{arguments to be passed to or from other methods.}
 
 \item{object}{A \code{\link{Plate}} object}
 }

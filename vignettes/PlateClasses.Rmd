@@ -72,18 +72,19 @@ plate <- plate |>
 ```
 
 The contents of a plate can be extracted by converting _Plate_ objects to their
-base class, _DataFrame_.
+base class, _DataFrame_.  The `head()` function does this automagically.
 
 ```{r plate_contents}
 plate |> DataFrame() |> head()
+head(plate)
 ```
 
 Note that setting again the same reagent overrides the volume, and that setting
 another reagent does not reset the previous one.
 
 ```{r set_well2}
-plate |> setWell(Well("A01"), "dNTP", 1e4) |> DataFrame() |> head(3)
-plate |> setWell(Well("A01"), "DMSO", 1e4) |> DataFrame() |> head(3)
+plate |> setWell(Well("A01"), "dNTP", 1e4) |> head(3)
+plate |> setWell(Well("A01"), "DMSO", 1e4) |> head(3)
 ```
 
 The `sourceReagent` function reports what reagents are found in the whole plate

@@ -33,7 +33,7 @@ A01 <- Well("A01")
 sourcePlate <- setWell(sourcePlate, A01, "dNTP", 100000)
 sourcePlate <- setWell(sourcePlate, Well("A02"), "dNTP",   100000)
 sourcePlate <- setWell(sourcePlate, Well("A03"), "buffer", 100000)
-DataFrame(sourcePlate)
+head(sourcePlate)
 }
 \seealso{
 Other Plate functions: 

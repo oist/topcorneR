@@ -244,7 +244,17 @@ Plate <- function(type, deadVolume = NULL, maxVolume = NULL) {
 }
 
 #' @rdname Plate-class
-#' @param x A [`Plate`] object
+#' @param x A [`Plate`] object.
+#' @param n The number of wells to be displayed.
+#' @param ... arguments to be passed to or from other methods.
+#' @importFrom utils head
+#' @export
+
+setMethod("head", "Plate", function(x, n = 6L, ...) {
+  head(DataFrame(x), n = n, ...)
+})
+
+#' @rdname Plate-class
 #' @export
 
 setMethod("as.character", "Plate", function(x) {
@@ -278,7 +288,7 @@ setMethod("show", "Plate", function(object) cat(as.character(object)))
 #' sourcePlate <- setWell(sourcePlate, A01, "dNTP", 100000)
 #' sourcePlate <- setWell(sourcePlate, Well("A02"), "dNTP",   100000)
 #' sourcePlate <- setWell(sourcePlate, Well("A03"), "buffer", 100000)
-#' DataFrame(sourcePlate)
+#' head(sourcePlate)
 #' @export
 
 setGeneric("setWell", function(plate, well, what, volume)
@@ -327,7 +337,7 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 #'   setWell(Well("A02"), "dNTP",   100000) |>
 #'   setWell(Well("A03"), "buffer", 100000)
 #'
-#' sourcePlate |> DataFrame() |> head()
+#' head(sourcePlate)
 #'
 #' sourcePlate |> sourceReagent(Well("A01"))
 #' sourcePlate |> sourceReagent(Well("A03"))
