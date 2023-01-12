@@ -84,6 +84,15 @@
 <p>Let’s paint a Christmas tree in a 96-well plate by transferring
 colored inks!</p>
 <div class="section level2">
+<h2 id="result">Result<a class="anchor" aria-label="anchor" href="#result"></a>
+</h2>
+<p>We ran this transfer in February 2018 during a demo at RIKEN.</p>
+<div class="figure">
+<img src="Xmas_small.jpeg" alt=""><p class="caption">image</p>
+</div>
+<p>Let’s see how it was prepared!</p>
+</div>
+<div class="section level2">
 <h2 id="planning-the-result">Planning the result<a class="anchor" aria-label="anchor" href="#planning-the-result"></a>
 </h2>
 <p>First, let’s create a <code>Plate</code> object that represents the
@@ -131,13 +140,13 @@ expected result of the transfer.</p>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="va">title</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="op">(</span><span class="va">plot_stem</span>   <span class="op">&lt;-</span> <span class="fu">plateMap</span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"stem"</span>,   <span class="st">"stem"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="XmasTree_files/figure-html/plot_plate_by_part-1.png" width="700"></p>
+<p><img src="XmasTree_files/figure-html/plot_plate_by_part-1.png" width="576"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">plot_leaves</span> <span class="op">&lt;-</span> <span class="fu">plateMap</span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"leaves"</span>, <span class="st">"leaves"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="XmasTree_files/figure-html/plot_plate_by_part-2.png" width="700"></p>
+<p><img src="XmasTree_files/figure-html/plot_plate_by_part-2.png" width="576"></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="op">(</span><span class="va">plot_balls</span>  <span class="op">&lt;-</span> <span class="fu">plateMap</span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"balls"</span>,  <span class="st">"balls"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="XmasTree_files/figure-html/plot_plate_by_part-3.png" width="700"></p>
+<p><img src="XmasTree_files/figure-html/plot_plate_by_part-3.png" width="576"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plateMap_all</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">plate</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">plate</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">plate</span><span class="op">[</span>,<span class="va">x</span><span class="op">]</span><span class="op">)</span>, <span class="st">""</span>, <span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
@@ -153,7 +162,7 @@ expected result of the transfer.</p>
 <span>  <span class="fu">platetools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/platetools/man/raw_map.html" class="external-link">raw_map</a></span><span class="op">(</span><span class="va">x</span>, well<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">plate</span><span class="op">)</span>, plate<span class="op">=</span><span class="st">"384"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu">plateMap_all</span><span class="op">(</span><span class="va">planPlate</span><span class="op">)</span></span></code></pre></div>
-<p><img src="XmasTree_files/figure-html/plot_all_parts-1.png" width="700"></p>
+<p><img src="XmasTree_files/figure-html/plot_all_parts-1.png" width="576"></p>
 </div>
 </div>
 <div class="section level2">
@@ -173,7 +182,7 @@ ink.</p>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"A02~A04"</span>, <span class="st">"leaves"</span>, <span class="fl">60000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span>  <span class="st">"A05"</span>,   <span class="st">"balls"</span>,  <span class="fl">20000</span><span class="op">)</span></span>
 <span><span class="fu">plateMap_all</span><span class="op">(</span><span class="va">sourcePlate</span><span class="op">)</span></span></code></pre></div>
-<p><img src="XmasTree_files/figure-html/sourcePlate-1.png" width="700"></p>
+<p><img src="XmasTree_files/figure-html/sourcePlate-1.png" width="576"></p>
 </div>
 <div class="section level2">
 <h2 id="plan-the-transfer">Plan the transfer<a class="anchor" aria-label="anchor" href="#plan-the-transfer"></a>
@@ -203,14 +212,6 @@ ink.</p>
 <span><span class="co">## We can export the transfer log as a CSV file to be loaded in the Echo machine.</span></span>
 <span><span class="co"># write.table( transfers[,1:3], file = "Xmas.csv"</span></span>
 <span><span class="co">#            , quote = FALSE, row.names = FALSE, col.names = FALSE, sep = ",")</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="result">Result<a class="anchor" aria-label="anchor" href="#result"></a>
-</h2>
-<p>We ran the transfer in February 2018 during a demo at RIKEN.</p>
-<div class="figure">
-<img src="Xmas_small.jpeg" alt=""><p class="caption">image</p>
-</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
