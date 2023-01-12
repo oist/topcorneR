@@ -25,6 +25,7 @@
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/PlateClasses.html">S4 classes for representing plates</a>
+    <a class="dropdown-item" href="../articles/XmasTree.html">Let's make a Christmas tree!</a>
     <a class="dropdown-item" href="../articles/transducer.html">Transducer simulator</a>
   </div>
 </li>
@@ -56,6 +57,9 @@
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for Plate</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">x</span>, n <span class="op">=</span> <span class="fl">6L</span>, <span class="va">...</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for Plate</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for Plate</span></span>
@@ -65,7 +69,15 @@
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>x</dt>
-<dd><p>A <code>Plate</code> object</p></dd>
+<dd><p>A <code>Plate</code> object.</p></dd>
+
+
+<dt>n</dt>
+<dd><p>The number of wells to be displayed.</p></dd>
+
+
+<dt>...</dt>
+<dd><p>arguments to be passed to or from other methods.</p></dd>
 
 
 <dt>object</dt>
