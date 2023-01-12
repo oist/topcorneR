@@ -52,6 +52,7 @@ Other Plate functions:
 \code{\link{nextWell}()},
 \code{\link{plateWellVolume}()},
 \code{\link{setWell}()},
+\code{\link{set_block}()},
 \code{\link{sourceReagent}()}
 }
 \concept{Plate functions}

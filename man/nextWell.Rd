@@ -32,6 +32,7 @@ Other Plate functions:
 \code{\link{plateWellVolume}()},
 \code{\link{seekReagent}()},
 \code{\link{setWell}()},
+\code{\link{set_block}()},
 \code{\link{sourceReagent}()}
 }
 \concept{Plate functions}
