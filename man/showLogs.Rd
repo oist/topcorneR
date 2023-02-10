@@ -3,21 +3,28 @@
 \name{showLogs}
 \alias{showLogs}
 \alias{showLogs,Echo-method}
-\title{Show transfer logs}
+\alias{exportLogs}
+\alias{exportLogs,Echo-method}
+\title{Show or export transfer logs}
 \usage{
 showLogs(echo)
 
 \S4method{showLogs}{Echo}(echo)
+
+exportLogs(echo)
+
+\S4method{exportLogs}{Echo}(echo)
 }
 \arguments{
 \item{echo}{An \code{Echo} object.}
 }
 \description{
 Extract the logs from an \code{Echo} object and formats them as a
-table.
+table.  The \code{exportLogs} function sets the column names expected by the
+\emph{Echo Plate Reformat} software and discards the \code{what} column.
 }
 \examples{
-
 showLogs(exampleEcho)
+exportLogs(exampleEcho)
 
 }

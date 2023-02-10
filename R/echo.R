@@ -225,16 +225,17 @@ setMethod( "moveTransducer"
 })
 
 
-#' Show transfer logs
+#' Show or export transfer logs
 #'
 #' Extract the logs from an `Echo` object and formats them as a
-#' table.
+#' table.  The `exportLogs` function sets the column names expected by the
+#' _Echo Plate Reformat_ software and discards the `what` column.
 #'
 #' @param echo An `Echo` object.
 #'
 #' @examples
-#'
 #' showLogs(exampleEcho)
+#' exportLogs(exampleEcho)
 #'
 #' @export
 
@@ -249,6 +250,19 @@ setMethod("showLogs", "Echo", function(echo) {
   df
 })
 
+#' @rdname showLogs
+#' @export
+
+setGeneric("exportLogs", function(echo) standardGeneric("exportLogs"))
+
+#' @rdname showLogs
+#' @export
+
+setMethod("exportLogs", "Echo", function(echo) {
+  df <- showLogs(echo)[,1:3]
+  colnames(df) <- c("Source well", "Destination well", "Transfer volume")
+  df
+})
 
 #' Transfer volume from a source to a destination plate
 #'
