@@ -381,12 +381,10 @@ setMethod( "transfer", c("Echo", "numeric"), .transfer)
 planTransfers <- function(source, destination, plan, model = "525") {
   echo <- Echo( source      = source
               , destination = destination
-              , transducer  = Transducer( source =      Well("A01", plateFormat = "384")
-                                        , destination = Well("A01", plateFormat = "384"))
+              , transducer  = Transducer( source =      Well("A01", plateFormat = source@metadata$type)
+                                        , destination = Well("A01", plateFormat = destination@metadata$type))
               , model       = model)
 
-# To do: better support plate formats.  Plate objects should have a plateFormat
-  # slot; in most cases it should not be retreived from the transducer.
 # To do: reform the sourceReagent function (the name is misleading, since now
 # it can also be run on destination plates)
 
