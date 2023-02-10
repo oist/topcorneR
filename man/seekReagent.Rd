@@ -30,19 +30,12 @@ a \code{Well} object.
 }
 \description{
 Given a \code{\link{Plate}} object, check if the reagent is available, and
-if yes, in which well.
+if yes, in which well.  The search can be restricted to exclude the wells
+positioned before (in alphanumeric order) an arbitrary position, to avoid
+backtracking to wells already emptired.
 }
 \examples{
-sourcePlate <- Plate( type       = "384"
-                    , deadVolume = 10000
-                    , maxVolume  = 100000)
-
-sourcePlate <- sourcePlate |>
-  setWell(Well("A01"), "dNTP",   100000) |>
-  setWell(Well("A02"), "dNTP",   100000) |>
-  setWell(Well("A03"), "buffer", 100000)
-
-seekReagent(sourcePlate, "buffer")
+seekReagent(examplePlate, "buffer")
 
 }
 \seealso{
