@@ -128,6 +128,6 @@ echo
 transfers <- showLogs(echo)
 head(transfers)
 ## We can export the transfer log as a CSV file to be loaded in the Echo machine.
-# write.table( transfers[,1:3], file = "Xmas.csv"
-#            , quote = FALSE, row.names = FALSE, col.names = FALSE, sep = ",")
+# write.table( exportLogs(echo), file = "Xmas.csv"
+#            , quote = FALSE, row.names = FALSE, col.names = TRUE, sep = ",")
 ```
