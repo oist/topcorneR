@@ -415,9 +415,8 @@ planTransfers <- function(source, destination, plan, model = "525") {
 
   for (reagent in sourceReagent(plan)) {
     # Move transducer in upper-left corner
-    echo <- echo |> moveTransducer( source      = Well(well = "A01", plateFormat = echo@transducer@source@plateFormat)
-
-                            , destination = Well(well = "A01", plateFormat = echo@transducer@destination@plateFormat))
+    echo <- echo |> moveTransducer( source      = Well(well = "A01", plateFormat = echo@transducer@  source   @plateFormat)
+                                  , destination = Well(well = "A01", plateFormat = echo@transducer@destination@plateFormat))
     # Find reagent in source plate
     echo <- seekReagent(echo, reagent)
     # Enter transfer loop
