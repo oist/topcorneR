@@ -129,7 +129,10 @@ expected result of the transfer.</p>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"J12"</span>, <span class="st">"balls"</span>, <span class="fl">1000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"I17"</span>, <span class="st">"balls"</span>, <span class="fl">1000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"E18"</span>, <span class="st">"balls"</span>, <span class="fl">1000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"M16"</span>, <span class="st">"balls"</span>, <span class="fl">1000</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"M16"</span>, <span class="st">"balls"</span>, <span class="fl">1000</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Remove leaves where balls are</span></span>
+<span><span class="va">planPlate</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">planPlate</span><span class="op">$</span><span class="va">balls</span><span class="op">)</span>,<span class="st">"leaves"</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="cn">NA</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="lets-visualise-the-plate-object">Let’s visualise the <code>Plate</code> object<a class="anchor" aria-label="anchor" href="#lets-visualise-the-plate-object"></a>
@@ -175,7 +178,7 @@ ink.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/colSums.html" class="external-link">colSums</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">planPlate</span><span class="op">)</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"stem"</span>, <span class="st">"leaves"</span>, <span class="st">"balls"</span><span class="op">)</span><span class="op">]</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   stem leaves  balls </span></span>
-<span><span class="co">#&gt;   8000 134000   7000</span></span>
+<span><span class="co">#&gt;   8000 127000   7000</span></span>
 <span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/Plate-class.html">Plate</a></span><span class="op">(</span><span class="st">"384"</span>, deadVolume <span class="op">=</span> <span class="fl">1e4</span>, maxVolume <span class="op">=</span> <span class="fl">1e5</span><span class="op">)</span></span>
 <span><span class="va">sourcePlate</span> <span class="op">&lt;-</span> <span class="va">sourcePlate</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span>  <span class="st">"A01"</span>,   <span class="st">"stem"</span>,   <span class="fl">20000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
@@ -199,7 +202,7 @@ ink.</p>
 <span><span class="co">#&gt; Transducer at the following coordinates:</span></span>
 <span><span class="co">#&gt;   Source:      A05</span></span>
 <span><span class="co">#&gt;   Destination: M16</span></span>
-<span><span class="co">#&gt; 149 elements in the log.</span></span>
+<span><span class="co">#&gt; 142 elements in the log.</span></span>
 <span><span class="va">transfers</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/showLogs.html">showLogs</a></span><span class="op">(</span><span class="va">echo</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">transfers</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   from  to  vol what</span></span>
