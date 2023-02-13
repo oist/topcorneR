@@ -69,6 +69,9 @@ planPlate <- planPlate |>
   set_block("I17", "balls", 1000) |>
   set_block("E18", "balls", 1000) |>
   set_block("M16", "balls", 1000)
+
+# Remove leaves where balls are
+planPlate[!is.na(planPlate$balls),"leaves"] <- NA
 ```
 
 ### Let's visualise the `Plate` object
