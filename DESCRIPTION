@@ -24,7 +24,9 @@ Suggests:
     knitr,
     qpcR,
     readxl,
-    rmarkdown
+    rmarkdown,
+    tibble,
+    viridis
 VignetteBuilder: knitr
 Collate: 
     'data.R'

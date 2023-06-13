@@ -11,7 +11,13 @@
 #' @export
 
 plateMap <- function(plate, x, title=x) {
-  if(isFALSE(requireNamespace('ggplot2'))) stop("Please install the ggplot2 package to use this function.")
+
+  if(isFALSE(requireNamespace('viridis', quietly = TRUE)))
+    stop("Please install the viridis package to use this function.")
+
+  if(isFALSE(requireNamespace('ggplot2')))
+    stop("Please install the ggplot2 package to use this function.")
+
   platetools::raw_map(plate[[x]], well=rownames(plate), plate=plate@metadata$type) +
     ggplot2::ggtitle(title) +
     viridis::scale_fill_viridis(trans = "log")

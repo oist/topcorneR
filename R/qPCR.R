@@ -40,7 +40,7 @@ load_qPCR_results <- function(
   res <- readxl::read_excel(file, sheet = "Results", skip = skip, n_max=n_max)
   res <- res[ , c("Well Position", "CT", "Tm1")]
 
-  res$CT <- res$CT |> sub(pat = "Undetermined", rep = NA) |> as.numeric()
+  res$CT <- res$CT |> sub(pattern = "Undetermined", replacement = NA) |> as.numeric()
 
   res$well <- paste0(sort(rep(LETTERS[1:16], 24)), formatC(1:24, width = 2, flag = "0"))
   res$row <- factor(sort(rep(LETTERS[1:16], 24)))
@@ -70,7 +70,8 @@ load_qPCR_meltcurve <- function(
 
   mlt <- readxl::read_excel(file, sheet = "Melt Curve Raw Data", skip = skip)
   mlt$well <- ifelse (nchar(mlt$`Well Position`) == 2,
-                      mlt$`Well Position` |> sub(pat = "(^[A-Z])", rep = "\\10"),
+                      mlt$`Well Position` |>
+                        sub(pattern = "(^[A-Z])", replacement = "\\10"),
                       mlt$`Well Position`)
 
   if(is.null(expName)) expName <- NA
@@ -98,12 +99,12 @@ load_qPCR_raw <- function(
   machine <- match.arg(machine)
 
   fluo <- readxl::read_excel(file, sheet = "Multicomponent Data", skip = skip)
-  fluo$SYBR <- fluo$SYBR |> gsub(pat=",", rep="") |> as.numeric()
-  fluo$ROX  <- fluo$ROX  |> gsub(pat=",", rep="") |> as.numeric()
+  fluo$SYBR <- fluo$SYBR |> gsub(pattern=",", replacement="") |> as.numeric()
+  fluo$ROX  <- fluo$ROX  |> gsub(pattern=",", replacement="") |> as.numeric()
   fluo$NORM <- fluo$SYBR / fluo$ROX
-  fluo$`Well Position` <- fluo$`Well Position` |> gsub(pat = " ", rep = "")
+  fluo$`Well Position` <- fluo$`Well Position` |> gsub(pattern=" ", replacement="")
   fluo$well <- ifelse (nchar(fluo$`Well Position`) == 2,
-                            fluo$`Well Position` |> sub(pat = "(^[A-Z])", rep = "\\10"),
+                            fluo$`Well Position` |> sub(pattern="(^[A-Z])", replacement="\\10"),
                             fluo$`Well Position`)
   fluo[fluo$Cycle <= cycles, c("well", "Cycle", "SYBR", "ROX", "NORM", "Well Position")]
 }
@@ -157,6 +158,9 @@ calc_qPCR_mod <- function(fluo) {
 
   if(isFALSE(requireNamespace('qpcR', quietly = TRUE)))
     stop("Please install the qpcR package to use this function.")
+
+  if(isFALSE(requireNamespace('tibble', quietly = TRUE)))
+    stop("Please install the tibble package to use this function.")
 
   # Same as qpcR::modlist, but quiet, and with well name as title.
   modlist2 <- function(x, ...) {
