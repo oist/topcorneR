@@ -31,7 +31,8 @@ load_qPCR_results <- function(
     skip=43,
     n_max=384) {
 
-  if(isFALSE(requireNamespace('readxl'))) stop("Please install the readxl package to use this function.")
+  if(isFALSE(requireNamespace('readxl', quietly = TRUE)))
+    stop("Please install the readxl package to use this function.")
 
   machine <- match.arg(machine)
   if(isTRUE(machine == "QS5")) skip = 45
@@ -62,7 +63,8 @@ load_qPCR_meltcurve <- function(
     format='Excel',
     skip=42) {
 
-  if(isFALSE(requireNamespace('readxl'))) stop("Please install the readxl package to use this function.")
+  if(isFALSE(requireNamespace('readxl', quietly = TRUE)))
+    stop("Please install the readxl package to use this function.")
 
   machine <- match.arg(machine)
 
@@ -90,7 +92,8 @@ load_qPCR_raw <- function(
     skip=42,
     cycles=40) {
 
-  if(isFALSE(requireNamespace('readxl'))) stop("Please install the readxl package to use this function.")
+  if(isFALSE(requireNamespace('readxl', quietly = TRUE)))
+    stop("Please install the readxl package to use this function.")
 
   machine <- match.arg(machine)
 
@@ -121,7 +124,9 @@ load_qPCR_raw <- function(
 #' @export
 
 calc_qPCR_TM <- function(mlt, cut.Area = 1) {
-  if(isFALSE(requireNamespace('qpcR'))) stop("Please install the qpcR package to use this function.")
+
+  if(isFALSE(requireNamespace('qpcR', quietly = TRUE)))
+    stop("Please install the qpcR package to use this function.")
 
   {sink("/dev/null")  # Work around verboseness
 
@@ -150,6 +155,9 @@ calc_qPCR_TM <- function(mlt, cut.Area = 1) {
 
 calc_qPCR_mod <- function(fluo) {
 
+  if(isFALSE(requireNamespace('qpcR', quietly = TRUE)))
+    stop("Please install the qpcR package to use this function.")
+
   # Same as qpcR::modlist, but quiet, and with well name as title.
   modlist2 <- function(x, ...) {
     {sink("/dev/null")  # Work around verboseness
@@ -160,7 +168,6 @@ calc_qPCR_mod <- function(fluo) {
   }
 
   # It seems that qpcR::modlist returns a different object if qpcR is not loaded.
-  library('qpcR') |> suppressPackageStartupMessages()
   fluo.l.mod <- sapply(split(fluo, fluo$well),
                        modlist2,
                        fluo = "NORM",
