@@ -25,6 +25,9 @@
     <loc>oist.github.io/topcorneR/reference/Echo-class.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/reference/N.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/reference/Plate-class.html</loc>
   </url>
   <url>
@@ -38,6 +41,12 @@
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/Well.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/calc_qPCR_TM.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/calc_qPCR_mod.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/changeWell.html</loc>
@@ -55,6 +64,9 @@
     <loc>oist.github.io/topcorneR/reference/index.html</loc>
   </url>
   <url>
+    <loc>oist.github.io/topcorneR/reference/load_qPCR.html</loc>
+  </url>
+  <url>
     <loc>oist.github.io/topcorneR/reference/moveTransducer.html</loc>
   </url>
   <url>
@@ -62,6 +74,9 @@
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/planTransfers.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/plateMap.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/plateWellVolume.html</loc>
@@ -80,6 +95,9 @@
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/sourceReagent.html</loc>
+  </url>
+  <url>
+    <loc>oist.github.io/topcorneR/reference/titration_curve.html</loc>
   </url>
   <url>
     <loc>oist.github.io/topcorneR/reference/transfer.html</loc>

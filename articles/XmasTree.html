@@ -142,13 +142,13 @@ expected result of the transfer.</p>
 <span>  <span class="fu">platetools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/platetools/man/raw_map.html" class="external-link">raw_map</a></span><span class="op">(</span><span class="va">plate</span><span class="op">[[</span><span class="va">x</span><span class="op">]</span><span class="op">]</span>, well<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">plate</span><span class="op">)</span>, plate<span class="op">=</span><span class="st">"384"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="va">title</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="op">(</span><span class="va">plot_stem</span>   <span class="op">&lt;-</span> <span class="fu">plateMap</span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"stem"</span>,   <span class="st">"stem"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">(</span><span class="va">plot_stem</span>   <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plateMap.html">plateMap</a></span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"stem"</span>,   <span class="st">"stem"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="XmasTree_files/figure-html/plot_plate_by_part-1.png" width="576"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="va">plot_leaves</span> <span class="op">&lt;-</span> <span class="fu">plateMap</span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"leaves"</span>, <span class="st">"leaves"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">plot_leaves</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plateMap.html">plateMap</a></span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"leaves"</span>, <span class="st">"leaves"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="XmasTree_files/figure-html/plot_plate_by_part-2.png" width="576"></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="op">(</span><span class="va">plot_balls</span>  <span class="op">&lt;-</span> <span class="fu">plateMap</span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"balls"</span>,  <span class="st">"balls"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="op">(</span><span class="va">plot_balls</span>  <span class="op">&lt;-</span> <span class="fu"><a href="../reference/plateMap.html">plateMap</a></span><span class="op">(</span><span class="va">planPlate</span>, <span class="st">"balls"</span>,  <span class="st">"balls"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="XmasTree_files/figure-html/plot_plate_by_part-3.png" width="576"></p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">plateMap_all</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">plate</span><span class="op">)</span> <span class="op">{</span></span>
@@ -164,7 +164,7 @@ expected result of the transfer.</p>
 <span>                <span class="op">}</span><span class="op">)</span></span>
 <span>  <span class="fu">platetools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/platetools/man/raw_map.html" class="external-link">raw_map</a></span><span class="op">(</span><span class="va">x</span>, well<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">plate</span><span class="op">)</span>, plate<span class="op">=</span><span class="st">"384"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="fu">plateMap_all</span><span class="op">(</span><span class="va">planPlate</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/plateMap.html">plateMap_all</a></span><span class="op">(</span><span class="va">planPlate</span><span class="op">)</span></span></code></pre></div>
 <p><img src="XmasTree_files/figure-html/plot_all_parts-1.png" width="576"></p>
 </div>
 </div>
@@ -184,7 +184,7 @@ ink.</p>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span>  <span class="st">"A01"</span>,   <span class="st">"stem"</span>,   <span class="fl">20000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span><span class="st">"A02~A04"</span>, <span class="st">"leaves"</span>, <span class="fl">60000</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/set_block.html">set_block</a></span><span class="op">(</span>  <span class="st">"A05"</span>,   <span class="st">"balls"</span>,  <span class="fl">20000</span><span class="op">)</span></span>
-<span><span class="fu">plateMap_all</span><span class="op">(</span><span class="va">sourcePlate</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/plateMap.html">plateMap_all</a></span><span class="op">(</span><span class="va">sourcePlate</span><span class="op">)</span></span></code></pre></div>
 <p><img src="XmasTree_files/figure-html/sourcePlate-1.png" width="576"></p>
 </div>
 <div class="section level2">
