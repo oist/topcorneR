@@ -22,9 +22,14 @@ Imports:
 Suggests: 
     ggplot2,
     knitr,
+    qpcR,
+    readxl,
     rmarkdown
 VignetteBuilder: knitr
 Collate: 
     'data.R'
     'plates.R'
     'echo.R'
+    'numbers.R'
+    'plateMap.R'
+    'qPCR.R'
