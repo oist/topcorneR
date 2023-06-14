@@ -172,6 +172,7 @@ calc_qPCR_mod <- function(fluo) {
   }
 
   # It seems that qpcR::modlist returns a different object if qpcR is not loaded.
+  library('qpcR') |> suppressPackageStartupMessages()
   fluo.l.mod <- sapply(split(fluo, fluo$well),
                        modlist2,
                        fluo = "NORM",
