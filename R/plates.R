@@ -49,7 +49,7 @@ setMethod("show", "Well", function(object) cat(
   paste0(object@well, " (", object@plateFormat, "-well format)"))
 )
 
-validPlateFormats <- c("undefined", "96", "384")
+validPlateFormats <- c("undefined", "6", "96", "384")
 
 setValidity("Well", function(object) {
   if (! object@plateFormat %in% validPlateFormats)
@@ -98,6 +98,7 @@ validRow <- function(w) {
   pf <- w@plateFormat
   if (pf == "undefined") return(TRUE)
   validRows <- list(
+      "6" = LETTERS[1:2],
      "96" = LETTERS[1:8],
     "384" = LETTERS[1:16]
   )
@@ -144,6 +145,7 @@ validColumn <- function(w) {
   pf <- w@plateFormat
   if (pf == "undefined") return(TRUE)
   validColumns <- list(
+      "6" = 1:03,
      "96" = 1:12,
     "384" = 1:24
   )
@@ -161,9 +163,10 @@ validColumn <- function(w) {
 #'
 #' @examples
 #'
-#' nextWell(Well("A12", plateFormat = "96"))
+#' nextWell(Well("A12", plateFormat =  "96"))
 #' nextWell(Well("A12", plateFormat = "384"))
 #' nextWell(Well("A24", plateFormat = "384"))
+#' nextWell(Well("A03", plateFormat =   "6"))
 #'
 #' @return A [`Well`] object.
 #'
@@ -198,16 +201,18 @@ setMethod ("nextWell", "Well", function(well) {
 #' @family Plate functions
 #'
 #' @examples
+#' PlateTypeToWellNames("6")
 #' PlateTypeToWellNames("96")
 #' PlateTypeToWellNames("384")
 #'
 #' @importFrom platetools num_to_well
 #' @export
 
-PlateTypeToWellNames <- function(type = c("96", "384")) {
+PlateTypeToWellNames <- function(type = c("6", "96", "384")) {
   switch(match.arg(type),
      "384" = {platetools::num_to_well(1:384,plate = 384)},
-     "96" = {platetools::num_to_well(1:96,plate = 96)}
+      "96" = {platetools::num_to_well(1:96, plate =  96)},
+       "6" = {platetools::num_to_well(1:6,  plate =   6)}
   )
 }
 
