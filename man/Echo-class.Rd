@@ -56,3 +56,13 @@ echo <- Echo( source      = plate
 echo
 
 }
+\seealso{
+Other Dispenser functions: 
+\code{\link{Transducer-class}},
+\code{\link{changeWell}()},
+\code{\link{moveTransducer}()},
+\code{\link{planTransfers}()},
+\code{\link{showLogs}()},
+\code{\link{transfer}()}
+}
+\concept{Dispenser functions}

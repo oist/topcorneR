@@ -36,3 +36,13 @@ Transducer(
   destination = Well("A01", plateFormat = "96"))
 
 }
+\seealso{
+Other Dispenser functions: 
+\code{\link{Echo-class}},
+\code{\link{changeWell}()},
+\code{\link{moveTransducer}()},
+\code{\link{planTransfers}()},
+\code{\link{showLogs}()},
+\code{\link{transfer}()}
+}
+\concept{Dispenser functions}

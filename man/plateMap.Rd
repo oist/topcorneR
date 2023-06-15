@@ -22,6 +22,20 @@ A \code{\link[ggplot2:ggplot]{ggplot2::ggplot}} object.
 \description{
 Plot the contents of a plate
 }
+\seealso{
+Other Plate functions: 
+\code{\link{Plate-class}},
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{plateWellVolume}()},
+\code{\link{randomise}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{set_block}()},
+\code{\link{sourceReagent}()}
+}
 \author{
 Charles Plessy
 }
+\concept{Plate functions}

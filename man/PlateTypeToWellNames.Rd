@@ -24,13 +24,22 @@ PlateTypeToWellNames("384")
 }
 \seealso{
 Other Plate functions: 
+\code{\link{Plate-class}},
 \code{\link{as.character,Well-method}},
 \code{\link{nextWell}()},
+\code{\link{plateMap}()},
 \code{\link{plateWellVolume}()},
 \code{\link{randomise}()},
 \code{\link{seekReagent}()},
 \code{\link{setWell}()},
 \code{\link{set_block}()},
 \code{\link{sourceReagent}()}
+
+Other Well functions: 
+\code{\link{Well-class}},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{validRow}()}
 }
 \concept{Plate functions}
+\concept{Well functions}

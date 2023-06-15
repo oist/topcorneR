@@ -45,3 +45,17 @@ plate <- Plate( type       = "384"
 plate
 
 }
+\seealso{
+Other Plate functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{plateMap}()},
+\code{\link{plateWellVolume}()},
+\code{\link{randomise}()},
+\code{\link{seekReagent}()},
+\code{\link{setWell}()},
+\code{\link{set_block}()},
+\code{\link{sourceReagent}()}
+}
+\concept{Plate functions}

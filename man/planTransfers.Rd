@@ -47,4 +47,13 @@ echo |> showLogs()
 }
 \seealso{
 \code{\link{showLogs}}
+
+Other Dispenser functions: 
+\code{\link{Echo-class}},
+\code{\link{Transducer-class}},
+\code{\link{changeWell}()},
+\code{\link{moveTransducer}()},
+\code{\link{showLogs}()},
+\code{\link{transfer}()}
 }
+\concept{Dispenser functions}

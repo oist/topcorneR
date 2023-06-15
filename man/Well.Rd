@@ -27,3 +27,11 @@ Row(well)
 Column(well)
 
 }
+\seealso{
+Other Well functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()},
+\code{\link{validRow}()}
+}
+\concept{Well functions}

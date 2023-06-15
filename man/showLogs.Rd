@@ -28,3 +28,13 @@ showLogs(exampleEcho)
 exportLogs(exampleEcho)
 
 }
+\seealso{
+Other Dispenser functions: 
+\code{\link{Echo-class}},
+\code{\link{Transducer-class}},
+\code{\link{changeWell}()},
+\code{\link{moveTransducer}()},
+\code{\link{planTransfers}()},
+\code{\link{transfer}()}
+}
+\concept{Dispenser functions}

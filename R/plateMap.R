@@ -4,6 +4,8 @@
 #' @param x One reagent of a plate.
 #' @param title a title for the plot.
 #'
+#' @family Plate functions
+#'
 #' @return A [`ggplot2::ggplot`] object.
 #'
 #' @author Charles Plessy

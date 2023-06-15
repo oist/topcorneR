@@ -45,9 +45,17 @@ Column(well)
 
 }
 \seealso{
+Other Well functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{Well-class}},
+\code{\link{nextWell}()},
+\code{\link{validRow}()}
+
 Other Plate functions: 
+\code{\link{Plate-class}},
 \code{\link{PlateTypeToWellNames}()},
 \code{\link{nextWell}()},
+\code{\link{plateMap}()},
 \code{\link{plateWellVolume}()},
 \code{\link{randomise}()},
 \code{\link{seekReagent}()},
@@ -55,9 +63,17 @@ Other Plate functions:
 \code{\link{set_block}()},
 \code{\link{sourceReagent}()}
 
+Other Well functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{Well-class}},
+\code{\link{nextWell}()},
+\code{\link{validRow}()}
+
 Other Plate functions: 
+\code{\link{Plate-class}},
 \code{\link{PlateTypeToWellNames}()},
 \code{\link{nextWell}()},
+\code{\link{plateMap}()},
 \code{\link{plateWellVolume}()},
 \code{\link{randomise}()},
 \code{\link{seekReagent}()},
@@ -66,3 +82,4 @@ Other Plate functions:
 \code{\link{sourceReagent}()}
 }
 \concept{Plate functions}
+\concept{Well functions}

@@ -27,9 +27,17 @@ nextWell(Well("A03", plateFormat =   "6"))
 
 }
 \seealso{
+Other Well functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{Well-class}},
+\code{\link{as.character,Well-method}},
+\code{\link{validRow}()}
+
 Other Plate functions: 
+\code{\link{Plate-class}},
 \code{\link{PlateTypeToWellNames}()},
 \code{\link{as.character,Well-method}},
+\code{\link{plateMap}()},
 \code{\link{plateWellVolume}()},
 \code{\link{randomise}()},
 \code{\link{seekReagent}()},
@@ -38,3 +46,4 @@ Other Plate functions:
 \code{\link{sourceReagent}()}
 }
 \concept{Plate functions}
+\concept{Well functions}

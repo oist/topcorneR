@@ -37,9 +37,11 @@ head(sourcePlate)
 }
 \seealso{
 Other Plate functions: 
+\code{\link{Plate-class}},
 \code{\link{PlateTypeToWellNames}()},
 \code{\link{as.character,Well-method}},
 \code{\link{nextWell}()},
+\code{\link{plateMap}()},
 \code{\link{plateWellVolume}()},
 \code{\link{randomise}()},
 \code{\link{seekReagent}()},

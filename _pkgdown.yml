@@ -1,4 +1,27 @@
 url: oist.github.io/topcorneR
 template:
   bootstrap: 5
-
+reference:
+  - title: Plate functions
+    desc: Functions working on Plate objects
+  - contents:
+    - has_concept("Plate functions")
+  - title: Well functions
+    desc: Functions working on Well objects
+  - contents:
+    - has_concept("Well functions")
+  - title: qPCR functions
+    desc: Functions to analyse qPCR results, including convenience wrappers to the _qpcR_ package.
+  - contents:
+    - has_concept("qPCR functions")
+  - title: Example data
+  - contents:
+    - has_concept("example data")
+  - title: Dispenser functions
+    desc: Dispenser functions
+  - contents:
+    - has_concept("Dispenser functions")
+  - title: Accessory functions
+    desc: Accessory functions
+  - contents:
+    - has_concept("Accessory functions")

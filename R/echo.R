@@ -15,6 +15,8 @@ NULL
 #'   source      = Well("A01"),
 #'   destination = Well("A01", plateFormat = "96"))
 #'
+#' @family Dispenser functions
+#'
 #' @rdname Transducer
 #' @export
 
@@ -54,6 +56,8 @@ setMethod("show", "Transducer", function(object) cat(as.character(object)))
 #' @slot transducer A [`Transducer`] state.
 #' @slot model The model of the Echo machine.
 #' @slot log A log of the transfers
+#'
+#' @family Dispenser functions
 #'
 #' @examples
 #' plate <- Plate( type       =   "384"
@@ -109,6 +113,8 @@ setMethod("show", "Echo", function(object) cat(as.character(object)))
 #'
 #' @return Returns a `Well` object.
 #'
+#' @family Dispenser functions
+#'
 #' @examples
 #'
 #' changeWell( Well("A01")
@@ -142,6 +148,8 @@ setMethod("changeWell", c("Well", "Well"), function (from, to) {
 #' @param destination A `Well` object.
 #'
 #' @return Returns a transducer object in the new state.
+#'
+#' @family Dispenser functions
 #'
 #' @examples
 #' moveTransducer(exampleTransducer, Well("A02"))
@@ -233,6 +241,8 @@ setMethod( "moveTransducer"
 #'
 #' @param echo An `Echo` object.
 #'
+#' @family Dispenser functions
+#'
 #' @examples
 #' showLogs(exampleEcho)
 #' exportLogs(exampleEcho)
@@ -278,6 +288,8 @@ setMethod("exportLogs", "Echo", function(echo) {
 #'
 #' @return Returns An [`Echo`] object with the `source`, `destination` and `log`
 #' slots updated.
+#'
+#' @family Dispenser functions
 #'
 #' @examples
 #'
@@ -358,7 +370,9 @@ setMethod( "transfer", c("Echo", "numeric"), .transfer)
 #'
 #' @return A transfer log
 #'
-#' @seealso \code{\link{showLogs}}
+#' @family Dispenser functions
+#'
+#' @seealso [`showLogs`]
 #'
 #' @examples
 #' sourcePlate <- examplePlate

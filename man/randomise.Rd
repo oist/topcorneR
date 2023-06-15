@@ -45,8 +45,8 @@ p <- Plate(type = "6") |> set_block("A01~B03", "reagent", 1:6 * 10)
 head(p)
 
 # Setting the same seed returns the same randomisation
-randomise(p, seed = 1022) |> head()
-randomise(p, seed = 1022) |> head()
+randomise(p, seed = 1111) |> head()
+randomise(p, seed = 1111) |> head()
 
 # Not providing a seed returns a really random order
 randomise(p) |> head()
@@ -65,9 +65,11 @@ p@metadata$randomisation_vector
 }
 \seealso{
 Other Plate functions: 
+\code{\link{Plate-class}},
 \code{\link{PlateTypeToWellNames}()},
 \code{\link{as.character,Well-method}},
 \code{\link{nextWell}()},
+\code{\link{plateMap}()},
 \code{\link{plateWellVolume}()},
 \code{\link{seekReagent}()},
 \code{\link{setWell}()},

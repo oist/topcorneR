@@ -27,3 +27,13 @@ changeWell( Well("A01")
           , Well("B03", plateFormat = "undefined"))
 
 }
+\seealso{
+Other Dispenser functions: 
+\code{\link{Echo-class}},
+\code{\link{Transducer-class}},
+\code{\link{moveTransducer}()},
+\code{\link{planTransfers}()},
+\code{\link{showLogs}()},
+\code{\link{transfer}()}
+}
+\concept{Dispenser functions}

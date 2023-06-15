@@ -22,3 +22,11 @@ Tests the well's row name is valid
 
 Tests the well's column number is valid
 }
+\seealso{
+Other Well functions: 
+\code{\link{PlateTypeToWellNames}()},
+\code{\link{Well-class}},
+\code{\link{as.character,Well-method}},
+\code{\link{nextWell}()}
+}
+\concept{Well functions}

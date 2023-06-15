@@ -7,6 +7,8 @@
 #' @slot well A position in the microwell plate.
 #' @slot plateFormat A plate format.
 #'
+#' @family Well functions
+#'
 #' @examples
 #' well <- Well("A01", plateFormat = "384")
 #' well
@@ -68,6 +70,8 @@ setValidity("Well", function(object) {
 #'
 #' @param object The [`Well`] object from which row coordinates are extracted.
 #'
+#' @family Well functions
+#'
 #' @return
 #' A row name in character format.
 #'
@@ -92,6 +96,8 @@ setMethod("Row", "Well", function(object)
 #' @return TRUE if valid, otherwise returns an error
 #' @param w A [`Well`].
 #'
+#' @family Well functions
+#'
 #' @rdname validationFunctions
 
 validRow <- function(w) {
@@ -113,6 +119,8 @@ validRow <- function(w) {
 #' Given a well object, tells in which column the well is.
 #'
 #' @param object The [`Well`] object from which column coordinates are extracted.
+#'
+#' @family Well functions
 #'
 #' @return
 #' A column name in character format
@@ -161,6 +169,8 @@ validColumn <- function(w) {
 #'
 #' @param well A [`Well`] object.
 #'
+#' @family Well functions
+#'
 #' @examples
 #'
 #' nextWell(Well("A12", plateFormat =  "96"))
@@ -199,6 +209,7 @@ setMethod ("nextWell", "Well", function(well) {
 #' Returns a character vector of well names.
 #'
 #' @family Plate functions
+#' @family Well functions
 #'
 #' @examples
 #' PlateTypeToWellNames("6")
@@ -229,6 +240,8 @@ PlateTypeToWellNames <- function(type = c("6", "96", "384")) {
 #'               , deadVolume = 10000
 #'               , maxVolume  = 100000)
 #' plate
+#'
+#' @family Plate functions
 #'
 #' @aliases Plate
 #' @importFrom S4Vectors DataFrame metadata metadata<- SimpleList
@@ -583,7 +596,7 @@ setMethod ("seekReagent", c("Plate", "character", "missing"), function(object, r
 setGeneric("randomise", function(plate, seed, vector) standardGeneric("randomise"))
 
 #' @rdname randomise
-#' @import stats runif
+#' @importFrom stats runif
 #' @export
 
 setMethod ("randomise", c("Plate", "missing", "missing"), function(plate, seed, vector) {
