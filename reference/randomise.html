@@ -113,9 +113,11 @@ results will become deterministic.</p>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p>Other Plate functions: 
+<code><a href="Plate-class.html">Plate-class</a></code>,
 <code><a href="PlateTypeToWellNames.html">PlateTypeToWellNames</a>()</code>,
 <code><a href="Well-class.html">as.character,Well-method</a></code>,
 <code><a href="nextWell.html">nextWell</a>()</code>,
+<code><a href="plateMap.html">plateMap</a>()</code>,
 <code><a href="plateWellVolume.html">plateWellVolume</a>()</code>,
 <code><a href="seekReagent.html">seekReagent</a>()</code>,
 <code><a href="setWell.html">setWell</a>()</code>,
@@ -143,25 +145,25 @@ results will become deterministic.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> B03        60</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Setting the same seed returns the same randomisation</span></span></span>
-<span class="r-in"><span><span class="fu">randomise</span><span class="op">(</span><span class="va">p</span>, seed <span class="op">=</span> <span class="fl">1022</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">randomise</span><span class="op">(</span><span class="va">p</span>, seed <span class="op">=</span> <span class="fl">1111</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 6 rows and 1 column</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       reagent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A01        40</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A02        20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A03        10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B01        60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B02        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B01        10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B02        60</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> B03        30</span>
-<span class="r-in"><span><span class="fu">randomise</span><span class="op">(</span><span class="va">p</span>, seed <span class="op">=</span> <span class="fl">1022</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">randomise</span><span class="op">(</span><span class="va">p</span>, seed <span class="op">=</span> <span class="fl">1111</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 6 rows and 1 column</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       reagent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A01        40</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A02        20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A03        10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B01        60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B02        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B01        10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B02        60</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> B03        30</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Not providing a seed returns a really random order</span></span></span>
@@ -169,21 +171,21 @@ results will become deterministic.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 6 rows and 1 column</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       reagent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A01        50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A02        60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A03        30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B01        20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B02        10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B03        40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A01        20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A02        30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B01        40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B02        60</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B03        10</span>
 <span class="r-in"><span><span class="fu">randomise</span><span class="op">(</span><span class="va">p</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 6 rows and 1 column</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       reagent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A01        40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A02        30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A03        20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B01        10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B02        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A01        30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A02        20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03        40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B01        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B02        10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> B03        60</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># The random order can also be passed with the vector argument</span></span></span>
@@ -192,11 +194,11 @@ results will become deterministic.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       reagent</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A01        40</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A02        60</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> A03        10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B01        50</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A02        10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03        30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B01        60</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> B02        20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> B03        30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> B03        50</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># This means also that order can also be forced</span></span></span>
 <span class="r-in"><span><span class="fu">randomise</span><span class="op">(</span><span class="va">p</span>, vector <span class="op">=</span> <span class="fl">6</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span></span>
@@ -213,7 +215,7 @@ results will become deterministic.</p>
 <span class="r-in"><span><span class="co"># The randomisation vector is stored in the Plate object's metadata</span></span></span>
 <span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">randomise</span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">p</span><span class="op">@</span><span class="va">metadata</span><span class="op">$</span><span class="va">randomisation_vector</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1 2 3 5 4 6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3 6 2 1 4 5</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
