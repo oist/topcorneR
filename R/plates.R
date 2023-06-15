@@ -561,8 +561,8 @@ setMethod ("seekReagent", c("Plate", "character", "missing"), function(object, r
 #' head(p)
 #'
 #' # Setting the same seed returns the same randomisation
-#' randomise(p, seed = 1022) |> head()
-#' randomise(p, seed = 1022) |> head()
+#' randomise(p, seed = 1111) |> head()
+#' randomise(p, seed = 1111) |> head()
 #'
 #' # Not providing a seed returns a really random order
 #' randomise(p) |> head()
