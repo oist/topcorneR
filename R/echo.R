@@ -428,7 +428,7 @@ planTransfers <- function(source, destination, plan, model = "525") {
 
 setMethod("seekReagent", c("Echo", "character", "Well"), function(object, reagent, start) {
   newPos <- seekReagent(object@source, reagent, start)
-  if (suppressWarnings(is.na(newPos))) stop(paste0("Reagent ", reagent," not found !"))
+  if (suppressWarnings(is.na(newPos))) stop(paste0("Reagent ", reagent," not found after emptying well ", start@well,"!"))
   object |> moveTransducer(source = newPos)
 })
 
