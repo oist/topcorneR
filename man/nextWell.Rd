@@ -20,9 +20,10 @@ From left to right, and up to down, give the position of the next well.
 }
 \examples{
 
-nextWell(Well("A12", plateFormat = "96"))
+nextWell(Well("A12", plateFormat =  "96"))
 nextWell(Well("A12", plateFormat = "384"))
 nextWell(Well("A24", plateFormat = "384"))
+nextWell(Well("A03", plateFormat =   "6"))
 
 }
 \seealso{

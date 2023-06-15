@@ -4,7 +4,7 @@
 \alias{PlateTypeToWellNames}
 \title{Well names of plate type}
 \usage{
-PlateTypeToWellNames(type = c("96", "384"))
+PlateTypeToWellNames(type = c("6", "96", "384"))
 }
 \arguments{
 \item{type}{The name a plate type (character)}
@@ -17,6 +17,7 @@ Lists the well names of a known well plate format, from left to right
 and top to bottom.
 }
 \examples{
+PlateTypeToWellNames("6")
 PlateTypeToWellNames("96")
 PlateTypeToWellNames("384")
 
