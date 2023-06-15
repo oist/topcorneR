@@ -51,6 +51,7 @@ Other Plate functions:
 \code{\link{as.character,Well-method}},
 \code{\link{nextWell}()},
 \code{\link{plateWellVolume}()},
+\code{\link{randomise}()},
 \code{\link{seekReagent}()},
 \code{\link{setWell}()},
 \code{\link{sourceReagent}()}

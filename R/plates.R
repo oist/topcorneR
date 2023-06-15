@@ -529,3 +529,83 @@ setMethod ("seekReagent", c("Plate", "character", "Well"), function(object, reag
 setMethod ("seekReagent", c("Plate", "character", "missing"), function(object, reagent, start) {
   seekReagent(object, reagent, Well(well="A01", plateFormat = "undefined"))
 })
+
+
+#' Randomise reaction coordinates
+#'
+#' Randomise the coordinates of the reactions in a plate, so that reactions with
+#' similar parameters are less likely to be affected by the same spatial
+#' technical biases.  This is also useful when performing plate replicates.
+#' Finally, the coordinates of negative controls will usually make a
+#' non-symmetric pattern that helps to detect when a plate was rotated
+#' accidentally.
+#'
+#' @note Working with random seeds is tricky.  In particular, pay attention that
+#' if you set the random seed just before running the `randomise` function, its
+#' results will become deterministic.
+#'
+#' @param plate A [`Plate`] object.
+#' @param seed An integer number to set the seed (optional).
+#' @param vector A (usually random) vector to sort the plate with (optional).
+#'
+#' @return a `Plate` object in which the randomisation vector was stored in
+#' its `metadata` slot.
+#'
+#' @author Charles Plessy
+#'
+#' @family Plate functions
+#'
+#' @examples
+#' # Toy example of a 6-well plate containing a gradient increase of a reagent
+#' p <- Plate(type = "6") |> set_block("A01~B03", "reagent", 1:6 * 10)
+#' head(p)
+#'
+#' # Setting the same seed returns the same randomisation
+#' randomise(p, seed = 1022) |> head()
+#' randomise(p, seed = 1022) |> head()
+#'
+#' # Not providing a seed returns a really random order
+#' randomise(p) |> head()
+#' randomise(p) |> head()
+#'
+#' # The random order can also be passed with the vector argument
+#' randomise(p, vector = sample(1:6)) |> head()
+#'
+#' # This means also that order can also be forced
+#' randomise(p, vector = 6:1) |> head()
+#'
+#' # The randomisation vector is stored in the Plate object's metadata
+#' p <- randomise(p)
+#' p@metadata$randomisation_vector
+#'
+#' @export
+
+setGeneric("randomise", function(plate, seed, vector) standardGeneric("randomise"))
+
+#' @rdname randomise
+#' @import stats runif
+#' @export
+
+setMethod ("randomise", c("Plate", "missing", "missing"), function(plate, seed, vector) {
+  randomise(plate, seed = floor(stats::runif(1) * 1000000000))
+})
+
+#' @rdname randomise
+#' @export
+
+setMethod ("randomise", c("Plate", "numeric", "missing"), function(plate, seed, vector) {
+  set.seed(seed)
+  vector <- sample(1:nrow(plate))
+  randomise(plate, vector = vector)
+})
+
+#' @rdname randomise
+#' @export
+
+setMethod ("randomise", c("Plate", "missing", "numeric"), function(plate, seed, vector) {
+  if(length(vector) != nrow(plate)) stop("The randomisation vector's length is different from the number of wells in the plate.")
+  plate <- plate[vector, ,drop = FALSE]
+  plate@metadata$randomisation_vector <- vector
+  rownames(plate) <- rownames(plate)[order(vector)]
+  plate
+})

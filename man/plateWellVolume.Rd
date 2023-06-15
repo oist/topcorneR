@@ -46,6 +46,7 @@ Other Plate functions:
 \code{\link{PlateTypeToWellNames}()},
 \code{\link{as.character,Well-method}},
 \code{\link{nextWell}()},
+\code{\link{randomise}()},
 \code{\link{seekReagent}()},
 \code{\link{setWell}()},
 \code{\link{set_block}()},
