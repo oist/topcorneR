@@ -379,15 +379,16 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 setGeneric("set_block", function(plate, block, what, value, add = FALSE)
   standardGeneric("set_block"))
 
-#' @rdname set_block
-#' @export
-
-setMethod( "set_block", c("Plate", "character", "character", "numeric")
-         , function(plate, block, what, value, add) {
+set_block_ <-  function(plate, block, what, value, add) {
   plate$well <- rownames(plate)
   if (isTRUE(add)) {
-    oldVolumes <- plate[,what]
-    oldVolumes[is.na(oldVolumes)] <- 0
+    if(what %in% colnames(plate)) {
+      oldVolumes <- plate[,what]
+      oldVolumes[is.na(oldVolumes)] <- 0
+    } else {
+      oldVolumes <- 0
+    }
+    plate[,what] <- 0
     plate <- platetools::set_block(plate, block, what, value)
     plate[,what] <- plate[,what] + oldVolumes
   } else {
@@ -395,7 +396,15 @@ setMethod( "set_block", c("Plate", "character", "character", "numeric")
   }
   plate$well <- NULL
   plate
-})
+}
+
+
+#' @rdname set_block
+#' @export
+
+setMethod( "set_block"
+         , c("Plate", "character", "character", "numeric")
+         , set_block_)
 
 #' Get reagent name
 #'

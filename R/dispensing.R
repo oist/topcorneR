@@ -54,11 +54,11 @@ dispense_pairs <- function (plate, set1, set2 = set1, volume, start = "A01") {
   }
 
   for (Nth in seq_along(set1)) {
-    plate <- set_block(plate, dispense_pairs_first(Nth),  set1[Nth], volume)
+    plate <- set_block(plate, dispense_pairs_first(Nth),  set1[Nth], volume, add = TRUE)
   }
 
   for (Nth in seq_along(set2)) {
-    plate <- set_block(plate, dispense_pairs_second(Nth), set2[Nth], volume)
+    plate <- set_block(plate, dispense_pairs_second(Nth), set2[Nth], volume, add = TRUE)
   }
 
   plate
