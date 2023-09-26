@@ -350,6 +350,7 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 #'        or a vector of coordinates.
 #' @param what A reagent name.
 #' @param value The value to set.
+#' @param add Add to the volume instead of overriding it.
 #'
 #' @return Returns the `Plate` object, where the values for the wells indicated
 #' in the blocks have been updated.
@@ -367,20 +368,31 @@ setMethod( "setWell", c("Plate", "Well", "character", "logical")
 #' p <- set_block(p, "A01~H12", "Mg2+", 3.0)
 #' head(p)
 #'
+#' p <- set_block(p, "A02~A03", "dNTP", 1, add = TRUE)
+#' head(p)
+#'
 #' @family Plate functions
+#' @family Dispensing functions
 #'
 #' @export
 
-setGeneric("set_block", function(plate, block, what, value)
+setGeneric("set_block", function(plate, block, what, value, add = FALSE)
   standardGeneric("set_block"))
 
 #' @rdname set_block
 #' @export
 
 setMethod( "set_block", c("Plate", "character", "character", "numeric")
-         , function(plate, block, what, value) {
+         , function(plate, block, what, value, add) {
   plate$well <- rownames(plate)
-  plate <- platetools::set_block(plate, block, what, value)
+  if (isTRUE(add)) {
+    oldVolumes <- plate[,what]
+    oldVolumes[is.na(oldVolumes)] <- 0
+    plate <- platetools::set_block(plate, block, what, value)
+    plate[,what] <- plate[,what] + oldVolumes
+  } else {
+    plate <- platetools::set_block(plate, block, what, value)
+  }
   plate$well <- NULL
   plate
 })
