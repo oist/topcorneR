@@ -25,3 +25,6 @@ reference:
     desc: Accessory functions
   - contents:
     - has_concept("Accessory functions")
+  - title: Dispensing functions
+  - contents:
+    - has_concept("Dispensing functions")
