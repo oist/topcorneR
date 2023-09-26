@@ -14,7 +14,7 @@ coordinates of their upper-left and bottom-right corners."><!-- mathjax --><scri
     
     <a class="navbar-brand me-2" href="../index.html">topcorneR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,10 +62,10 @@ coordinates of their upper-left and bottom-right corners.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">set_block</span><span class="op">(</span><span class="va">plate</span>, <span class="va">block</span>, <span class="va">what</span>, <span class="va">value</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">set_block</span><span class="op">(</span><span class="va">plate</span>, <span class="va">block</span>, <span class="va">what</span>, <span class="va">value</span>, add <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S4 method for Plate,character,character,numeric</span></span>
-<span><span class="fu">set_block</span><span class="op">(</span><span class="va">plate</span>, <span class="va">block</span>, <span class="va">what</span>, <span class="va">value</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">set_block</span><span class="op">(</span><span class="va">plate</span>, <span class="va">block</span>, <span class="va">what</span>, <span class="va">value</span>, add <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -85,6 +85,10 @@ or a vector of coordinates.</p></dd>
 
 <dt>value</dt>
 <dd><p>The value to set.</p></dd>
+
+
+<dt>add</dt>
+<dd><p>Add to the volume instead of overriding it.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -110,7 +114,9 @@ in the blocks have been updated.</p>
 <code><a href="randomise.html">randomise</a>()</code>,
 <code><a href="seekReagent.html">seekReagent</a>()</code>,
 <code><a href="setWell.html">setWell</a>()</code>,
-<code><a href="sourceReagent.html">sourceReagent</a>()</code></p></div>
+<code><a href="sourceReagent.html">sourceReagent</a>()</code></p>
+<p>Other Dispensing functions: 
+<code><a href="dispense_pairs.html">dispense_pairs</a>()</code></p></div>
     </div>
 
     <div class="section level2">
@@ -145,6 +151,18 @@ in the blocks have been updated.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A03      0.50         3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A04        NA         3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A05      0.25         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A06        NA         3</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">set_block</span><span class="op">(</span><span class="va">p</span>, <span class="st">"A02~A03"</span>, <span class="st">"dNTP"</span>, <span class="fl">1</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 6 rows and 2 columns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          dNTP      Mg2.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt; &lt;numeric&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A01      0.50         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A02      1.25         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03      1.50         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A04        NA         3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A05      0.50         3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A06        NA         3</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
