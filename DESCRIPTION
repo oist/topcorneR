@@ -1,7 +1,7 @@
 Package: topcorneR
 Type: Package
 Title: Plan high-throughput liquid transfers
-Version: 0.1.0
+Version: 0.1.2
 Authors@R: c(
   person("Charles", "Plessy", email = "charles.plessy@oist.jp",
           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7410-6295")))
@@ -11,7 +11,7 @@ License: CC0
 URL: https://oist.github.io/topcorneR, https://github.com/oist/topcorneR
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
 Depends:
     R (>= 4.1),
@@ -30,6 +30,7 @@ Suggests:
 VignetteBuilder: knitr
 Collate: 
     'data.R'
+    'dispensing.R'
     'plates.R'
     'echo.R'
     'numbers.R'
