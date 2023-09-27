@@ -10,6 +10,7 @@
 #' @param set1 First set of reagents.
 #' @param set2 Second set of reagents.
 #' @param volume Fixed volume to dispense.
+#' @param n_per_pair Number of replicates per pair.
 #' @param start Starting well.
 #'
 #' @returns Returns a `Plate` object with columns documenting the reagents to
@@ -27,14 +28,16 @@
 #' examplePlate |>
 #'   dispense_pairs(c("F01", "F02"), volume = 10) |>
 #'   DataFrame() |> head(6)
+#' examplePlate |>
+#'   dispense_pairs("F01", c("R01", "R02"), volume = 10, n = 3) |>
+#'   DataFrame() |> head(6)
 #'
 #' @export
 
-dispense_pairs <- function (plate, set1, set2 = set1, volume, start = "A01") {
+dispense_pairs <- function (plate, set1, set2 = set1, volume, n_per_pair = 1L, start = "A01") {
   set1_N     <- length(set1)
   set2_N     <- length(set2)
   plateType  <- plate@metadata$type
-  n_per_pair <- length(volume)
 
   # Lots of technological debt in this function, sorry...
 
