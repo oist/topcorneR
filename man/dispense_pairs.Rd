@@ -4,7 +4,14 @@
 \alias{dispense_pairs}
 \title{Dispense pair combinations}
 \usage{
-dispense_pairs(plate, set1, set2 = set1, volume, start = "A01")
+dispense_pairs(
+  plate,
+  set1,
+  set2 = set1,
+  volume,
+  n_per_pair = 1L,
+  start = "A01"
+)
 }
 \arguments{
 \item{plate}{A \code{\link{Plate}} object.}
@@ -14,6 +21,8 @@ dispense_pairs(plate, set1, set2 = set1, volume, start = "A01")
 \item{set2}{Second set of reagents.}
 
 \item{volume}{Fixed volume to dispense.}
+
+\item{n_per_pair}{Number of replicates per pair.}
 
 \item{start}{Starting well.}
 }
@@ -35,6 +44,9 @@ examplePlate |>
   DataFrame() |> head(6)
 examplePlate |>
   dispense_pairs(c("F01", "F02"), volume = 10) |>
+  DataFrame() |> head(6)
+examplePlate |>
+  dispense_pairs("F01", c("R01", "R02"), volume = 10, n = 3) |>
   DataFrame() |> head(6)
 
 }
