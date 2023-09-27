@@ -23,14 +23,11 @@
 #'
 #' @examples
 #' examplePlate |>
-#'   dispense_pairs(c("F01", "F02", "F03"), c("R01", "R02"), volume = 20) |>
-#'   DataFrame() |> head(6)
+#'   dispense_pairs(c("F01", "F02", "F03"), c("R01", "R02"), volume = 20) |> head(6)
 #' examplePlate |>
-#'   dispense_pairs(c("F01", "F02"), volume = 10) |>
-#'   DataFrame() |> head(6)
+#'   dispense_pairs(c("F01", "F02"), volume = 10) |> head(6)
 #' examplePlate |>
-#'   dispense_pairs("F01", c("R01", "R02"), volume = 10, n = 3) |>
-#'   DataFrame() |> head(6)
+#'   dispense_pairs("F01", c("R01", "R02"), volume = 10, n = 3) |> head(6)
 #'
 #' @export
 
