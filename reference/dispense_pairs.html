@@ -59,7 +59,14 @@ for instance forward and reverse PCR primers.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dispense_pairs</span><span class="op">(</span><span class="va">plate</span>, <span class="va">set1</span>, set2 <span class="op">=</span> <span class="va">set1</span>, <span class="va">volume</span>, start <span class="op">=</span> <span class="st">"A01"</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dispense_pairs</span><span class="op">(</span></span>
+<span>  <span class="va">plate</span>,</span>
+<span>  <span class="va">set1</span>,</span>
+<span>  set2 <span class="op">=</span> <span class="va">set1</span>,</span>
+<span>  <span class="va">volume</span>,</span>
+<span>  n_per_pair <span class="op">=</span> <span class="fl">1L</span>,</span>
+<span>  start <span class="op">=</span> <span class="st">"A01"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -78,6 +85,10 @@ for instance forward and reverse PCR primers.</p>
 
 <dt>volume</dt>
 <dd><p>Fixed volume to dispense.</p></dd>
+
+
+<dt>n_per_pair</dt>
+<dd><p>Number of replicates per pair.</p></dd>
 
 
 <dt>start</dt>
@@ -129,6 +140,18 @@ source plate.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A04        NA        NA         0        20</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A05        NA        NA         0         0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> A06        NA        NA         0         0</span>
+<span class="r-in"><span><span class="va">examplePlate</span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span>  <span class="fu">dispense_pairs</span><span class="op">(</span><span class="st">"F01"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"R01"</span>, <span class="st">"R02"</span><span class="op">)</span>, volume <span class="op">=</span> <span class="fl">10</span>, n <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
+<span class="r-in"><span>  <span class="fu">DataFrame</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 6 rows and 5 columns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          dNTP    buffer       F01       R01       R02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt; &lt;numeric&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A01     1e+05        NA        10        10         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A02     1e+05        NA        10        10         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A03        NA     1e+05        10        10         0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A04        NA        NA        10         0        10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A05        NA        NA        10         0        10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> A06        NA        NA        10         0        10</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
