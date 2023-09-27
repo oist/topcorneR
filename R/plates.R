@@ -391,6 +391,7 @@ set_block_ <-  function(plate, block, what, value, add) {
     plate[,what] <- 0
     plate <- platetools::set_block(plate, block, what, value)
     plate[,what] <- plate[,what] + oldVolumes
+    plate[,what][plate[,what] == 0] <- NA
   } else {
     plate <- platetools::set_block(plate, block, what, value)
   }
