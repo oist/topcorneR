@@ -179,7 +179,27 @@ calc_qPCR_mod <- function(fluo) {
                        cyc = "Cycle")
   detach("package:qpcR", unload=TRUE)
 
-  fluo.l.eff <- sapply(fluo.l.mod, qpcR::efficiency, plot = FALSE)
+  # Generator of negative results in case qpcR::modlist failed to fit.
+  all_NAs <- function(well) {
+    list(NA_real_, NA_real_, NA_real_, NA_real_, NA_real_, NA_real_,  NA_real_,
+         NA_real_, NA_real_, NA_real_, NA_real_, NA_real_, NA_real_,  NA_real_,
+         NA_real_, NA_real_, NA_real_, NA) |>
+      structure( dim = c(18L, 1L),
+                 dimnames = list(c("eff", "resVar", "AICc", "AIC", "Rsq",
+                                   "Rsq.ad", "cpD1", "cpD2", "cpE", "cpR",
+                                   "cpT", "Cy0", "cpCQ", "cpMR", "fluo",
+                                   "init1", "init2", "cf"),
+                                 well))
+  }
+
+  fluo.l.eff <- sapply(fluo.l.mod, \(mod) {
+    # If fit failed, object does not have class nls.
+    if ("nls" %in% class(mod)) {
+      qpcR::efficiency(mod, plot = FALSE)
+    } else {
+      all_NAs(mod$title)
+    }
+  })
 
   tibble::tibble(
     well = names(fluo.l.mod),
