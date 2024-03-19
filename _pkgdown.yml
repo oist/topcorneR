@@ -28,3 +28,6 @@ reference:
   - title: Dispensing functions
   - contents:
     - has_concept("Dispensing functions")
+  - title: Private functions
+  - contents:
+    - has_concept("Private functions")

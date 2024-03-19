@@ -29,6 +29,7 @@ Suggests:
     viridis
 VignetteBuilder: knitr
 Collate: 
+    'bisectError.R'
     'data.R'
     'dispensing.R'
     'plates.R'
